@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",

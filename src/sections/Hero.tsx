@@ -22,12 +22,12 @@ const Hero: React.FC = () => {
         }}></div>
       </div>
 
-      <div className="container-max text-center relative z-10 mb-4 sm:mb-6">
+      <div className="hero-container text-center relative z-10 mb-4 sm:mb-6 lg:mb-8 xl:mb-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-4 sm:space-y-6"
+          className="space-y-4 sm:space-y-6 lg:space-y-8 xl:space-y-10"
         >
 
           {/* Greeting */}
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8, type: "spring" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold gradient-text leading-tight sm:leading-tight md:leading-tight lg:leading-relaxed xl:leading-relaxed px-2"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold gradient-text leading-tight sm:leading-tight md:leading-tight lg:leading-relaxed xl:leading-relaxed"
           >
             Joseph Yaw Agyeman
           </motion.h1>
@@ -55,9 +55,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-platinum font-medium leading-tight sm:leading-tight md:leading-tight lg:leading-relaxed xl:leading-relaxed px-4"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-platinum font-medium leading-tight sm:leading-tight md:leading-tight lg:leading-relaxed xl:leading-relaxed"
           >
-            Full Stack Developer & Designer
+            Full Stack Developer & AI/ML Engineer
           </motion.h2>
 
           {/* Availability Status Badge */}
@@ -105,10 +105,10 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-silver text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-4 mt-4"
+            className="text-silver text-base sm:text-lg md:text-xl content-constraint leading-relaxed mt-4 text-balance"
           >
-            Crafting exceptional digital experiences with clean code, innovative design, 
-            and cutting-edge technologies. Passionate about creating solutions that make a difference.
+            Building intelligent applications with clean code, modern frameworks, 
+            and cutting-edge AI/ML technologies. Passionate about creating innovative solutions that drive business value.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 sm:pt-6 px-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-4 sm:pt-6"
           >
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
@@ -136,6 +136,7 @@ const Hero: React.FC = () => {
               className="w-full sm:w-auto border-2 border-platinum text-platinum px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg
                          hover:bg-platinum hover:text-obsidian transition-all duration-300
                          flex items-center justify-center gap-2"
+              onClick={() => window.open('https://drive.google.com/file/d/1oMVo0ut4BzpxZrmPdL2ytrJMAyLx13a-/view?usp=sharing', '_blank')}
             >
               <Download className="w-4 h-4 sm:w-5 sm:h-5" />
               Download CV
@@ -147,12 +148,12 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto pt-8 sm:pt-12 px-4"
+            className="grid grid-cols-3 gap-4 sm:gap-8 lg:gap-12 xl:gap-16 ultra-wide-constraint pt-8 sm:pt-12 lg:pt-16 xl:pt-20"
           >
             {[
               { number: '5+', label: 'Years Experience' },
               { number: '50+', label: 'Projects Completed' },
-              { number: '100%', label: 'Client Satisfaction' }
+              { number: '100%', label: 'Client Satisfaction' } 
             ].map((stat, index) => (
                               <motion.div
                   key={index}

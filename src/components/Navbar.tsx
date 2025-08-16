@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container-max">
-        <div className="flex items-center justify-between h-14 sm:h-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}

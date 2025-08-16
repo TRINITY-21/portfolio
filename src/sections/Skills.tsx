@@ -6,74 +6,81 @@ const Skills: React.FC = () => {
   const skillCategories = [
     {
       icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Frontend Development",
+      title: "Programming Languages",
       skills: [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
+        { name: "Python", level: 95 },
+        { name: "JAVA", level: 90 },
         { name: "JavaScript", level: 95 },
-        { name: "HTML/CSS", level: 98 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "Next.js", level: 88 }
+        { name: "TypeScript", level: 92 }
       ]
     },
     {
       icon: <Database className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Backend Development",
+      title: "Frameworks & Libraries",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Express.js", level: 88 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 82 },
-        { name: "MongoDB", level: 80 },
-        { name: "GraphQL", level: 75 }
+        { name: "Django", level: 95 },
+        { name: "Django REST Framework", level: 92 },
+        { name: "React", level: 90 },
+        { name: "Nextjs", level: 85 },
+        { name: "Springboot", level: 88 },
+        { name: "HTML/CSS", level: 98 },
+        { name: "Tailwind CSS", level: 92 },
+
       ]
     },
     {
       icon: <Cloud className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "DevOps & Cloud",
+      title: "Databases & Search",
       skills: [
-        { name: "AWS", level: 85 },
-        { name: "Docker", level: 80 },
-        { name: "Git", level: 95 },
-        { name: "CI/CD", level: 78 },
-        { name: "Linux", level: 82 },
-        { name: "Kubernetes", level: 70 }
+        { name: "PostgreSQL", level: 90 },
+        { name: "MySQL", level: 88 },
+        { name: "MongoDB", level: 85 },
+        { name: "Elasticsearch", level: 82 },
+        { name: "Redis", level: 88 }
       ]
     },
     {
       icon: <Palette className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Design & Tools",
+      title: "Architecture & APIs",
       skills: [
-        { name: "Figma", level: 85 },
-        { name: "Adobe XD", level: 80 },
-        { name: "Photoshop", level: 75 },
-        { name: "Illustrator", level: 70 },
-        { name: "Sketch", level: 65 },
-        { name: "InVision", level: 80 }
+        { name: "Microservices", level: 88 },
+        { name: "Distributed Systems", level: 85 },
+        { name: "REST APIs", level: 92 },
+        { name: "GraphQL", level: 80 }
       ]
     },
     {
       icon: <Smartphone className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Mobile Development",
+      title: "Message Brokers & Caching",
       skills: [
-        { name: "React Native", level: 85 },
-        { name: "Flutter", level: 70 },
-        { name: "iOS Development", level: 65 },
-        { name: "Android Development", level: 60 },
-        { name: "PWA", level: 90 },
-        { name: "Responsive Design", level: 95 }
+        { name: "RabbitMQ", level: 85 },
+        { name: "Kafka", level: 82 },
+        { name: "Redis Search", level: 80 },
+        { name: "Redis Caching", level: 88 }
       ]
     },
     {
       icon: <Globe className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Other Technologies",
+      title: "DevOps & Cloud",
       skills: [
-        { name: "Blockchain", level: 70 },
-        { name: "Machine Learning", level: 65 },
-        { name: "Web3", level: 75 },
-        { name: "REST APIs", level: 92 },
-        { name: "Testing", level: 85 },
-        { name: "Performance", level: 88 }
+        { name: "Docker", level: 88 },
+        { name: "Kubernetes", level: 85 },
+        { name: "AWS", level: 90 },
+        { name: "Git", level: 95 },
+        { name: "GitHub Actions", level: 88 },
+        { name: "Circle CI", level: 85 }
+      ]
+    },
+    {
+      icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
+      title: "AI & Machine Learning",
+      skills: [
+        { name: "Machine Learning", level: 85 },
+        { name: "Deep Learning", level: 80 },
+        { name: "Natural Language Processing", level: 82 },
+        { name: "Large Language Models", level: 88 },
+        { name: "TensorFlow", level: 85 },
+        { name: "PyTorch", level: 80 }
       ]
     }
   ]
@@ -167,9 +174,10 @@ const Skills: React.FC = () => {
           <h3 className="text-xl sm:text-2xl font-semibold text-platinum mb-6 sm:mb-8">Additional Skills</h3>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 px-4">
             {[
-              "Agile Methodologies", "Scrum", "Team Leadership", "Project Management",
-              "Technical Writing", "Public Speaking", "Mentoring", "Code Review",
-              "System Architecture", "Microservices", "API Design", "Security Best Practices"
+              "Agile Software Development", "SCRUM", "Object-Oriented Programming", "Test-driven Development",
+              "GitLab CI/CD", "AWS Code Pipeline", "Linux", "System Architecture",
+              "API Design", "Security Best Practices", "Team Collaboration", "Code Review",
+              "Data Science", "Neural Networks", "Computer Vision", "Predictive Modeling"
             ].map((skill, index) => (
               <motion.span
                 key={index}

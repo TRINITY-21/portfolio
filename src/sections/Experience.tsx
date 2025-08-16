@@ -6,71 +6,57 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       id: 1,
-      company: "TechCorp Solutions",
-      position: "Senior Full Stack Developer",
-      duration: "2022 - Present",
-      location: "San Francisco, CA",
+      company: "KNG Technologies",
+      position: "Full-stack Engineer",
+      duration: "September 2022 - Present",
+      location: "Remote",
       type: "Full-time",
-      description: "Leading development of enterprise-scale web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
+      description: "Building distributed platforms and sophisticated workflow services using modern technologies. Collaborating with cross-functional teams to design and develop scalable backend systems.",
       achievements: [
-        "Led a team of 5 developers in building a customer portal serving 100K+ users",
-        "Improved application performance by 40% through optimization and caching strategies",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Mentored 3 junior developers and conducted code review sessions"
+        "Leveraged Django, TypeScript, and Next.js to build distributed platforms using Kafka for efficient data streaming and processing",
+        "Implemented DevOps practices using AWS, Docker, Kubernetes, and Helm charts for efficient deployment and scaling",
+        "Utilized GitHub Actions for CI/CD, automating build, testing, and deployment processes",
+        "Developed reusable libraries in Django and Next.js to enhance code reusability and faster development cycles",
+        "Built sophisticated workflow service using Django for REST APIs with PostgreSQL for data persistence"
       ],
-      technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL", "Redis"],
-      logo: "TC"
+      technologies: ["Django", "Next.js", "TypeScript", "PostgreSQL", "React.js", "Python", "Kafka", "AWS", "Docker", "Kubernetes", "Helm", "GitHub Actions"],
+      logo: "KT"
     },
     {
       id: 2,
-      company: "InnovateTech",
-      position: "Full Stack Developer",
-      duration: "2020 - 2022",
-      location: "New York, NY",
+      company: "Cybotcx",
+      position: "Full-stack Engineer",
+      duration: "October 2021 - June 2023",
+      location: "Remote",
       type: "Full-time",
-      description: "Developed and maintained multiple web applications, focusing on user experience and performance optimization. Collaborated with design and product teams.",
+      description: "Worked as a Senior Full Stack Developer building highly scalable applications using Django, Next.js, and React. Implemented containerization and orchestration solutions.",
       achievements: [
-        "Built 3 major features for the main product, increasing user engagement by 25%",
-        "Reduced page load times by 35% through code splitting and lazy loading",
-        "Collaborated with UX team to implement responsive design improvements",
-        "Participated in agile development process with 2-week sprint cycles"
+        "Built highly scalable applications using Django, Next.js, React, and various modern tools",
+        "Orchestrated containerization and orchestration using Kubernetes for efficient deployment and scaling",
+        "Implemented CI/CD pipelines using CircleCI, automating build, testing, and deployment processes",
+        "Leveraged MySQL as a relational database management system with optimized schemas and queries",
+        "Utilized Redis for caching and Elasticsearch for search functionality"
       ],
-      technologies: ["React", "Express.js", "MongoDB", "Socket.io", "Tailwind CSS"],
-      logo: "IT"
+      technologies: ["TypeScript", "JavaScript", "Python", "Django", "React", "MySQL", "Redis", "Kubernetes", "CircleCI", "Elasticsearch", "AWS", "Linux", "Jest"],
+      logo: "CX"
     },
     {
       id: 3,
-      company: "StartupHub",
-      position: "Frontend Developer",
-      duration: "2019 - 2020",
-      location: "Austin, TX",
+      company: "Mpedigree",
+      position: "Backend Engineer",
+      duration: "September 2020 - 2022",
+      location: "Accra, Ghana",
       type: "Full-time",
-      description: "Focused on creating responsive and accessible user interfaces. Worked closely with designers to implement pixel-perfect designs.",
+      description: "Worked as a Full Stack Developer contributing to projects like Panabios and Alkemy care, a trusted B2B marketplace in Ghana. Participated in sprint meetings and code reviews.",
       achievements: [
-        "Developed 5+ responsive web pages with 99% accessibility score",
-        "Implemented design system components used across the entire application",
-        "Optimized bundle size by 20% through tree shaking and code splitting",
-        "Collaborated with backend team to design and implement REST APIs"
+        "Contributed to Panabios and Alkemy care projects - trusted B2B marketplace platforms in Ghana",
+        "Participated in sprint meetings, wrote code, and contributed to code review processes",
+        "Built and maintained in-house packages for improved development efficiency",
+        "Leveraged Django and REST framework to develop robust backend applications",
+        "Worked with cross-functional teams to deliver scalable solutions"
       ],
-      technologies: ["React", "TypeScript", "Styled Components", "Jest", "Webpack"],
-      logo: "SH"
-    },
-    {
-      id: 4,
-      company: "Freelance",
-      position: "Web Developer",
-      duration: "2018 - 2019",
-      location: "Remote",
-      type: "Contract",
-      description: "Worked with various clients to build custom websites and web applications. Managed projects from conception to deployment.",
-      achievements: [
-        "Completed 15+ client projects with 100% satisfaction rate",
-        "Built e-commerce sites, portfolios, and business websites",
-        "Managed client relationships and project timelines independently",
-        "Learned multiple frameworks and technologies through diverse projects"
-      ],
-      technologies: ["HTML/CSS", "JavaScript", "PHP", "WordPress", "jQuery"],
-      logo: "FR"
+      technologies: ["Python", "Django", "JavaScript", "React", "RabbitMQ", "Redis", "Redux", "Ansible", "Linode", "Linux"],
+      logo: "MP"
     }
   ]
 
@@ -88,24 +74,24 @@ const Experience: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-20 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold gradient-text mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold gradient-text mb-8 sm:mb-6">
             Work Experience
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-platinum to-silver mx-auto mb-6"></div>
-          <p className="text-silver text-base md:text-lg max-w-3xl mx-auto px-4">
+          <div className="w-24 h-1 bg-gradient-to-r from-platinum to-silver mx-auto mb-8 sm:mb-6"></div>
+          <p className="text-silver text-base md:text-lg max-w-3xl mx-auto px-6 sm:px-4">
             My professional journey in software development, showcasing growth, achievements, 
             and the diverse range of projects I've contributed to.
           </p>
         </motion.div>
 
         {/* Experience Timeline */}
-        <div className="relative px-4 sm:px-0">
+        <div className="relative px-0 sm:px-4 md:px-0">
           {/* Timeline Line - Hidden on mobile, visible on larger screens */}
           <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-platinum via-silver to-steel"></div>
 
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-10 sm:space-y-8 md:space-y-12">
             {experiences.map((experience, index) => (
               <motion.div
                 key={experience.id}
@@ -123,25 +109,25 @@ const Experience: React.FC = () => {
                                hover:border-platinum/50 transition-all duration-300 hover:shadow-2xl">
                   
                   {/* Header */}
-                  <div className="flex flex-col gap-4 mb-6">
-                    <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                  <div className="flex flex-col gap-5 sm:gap-4 mb-8 sm:mb-6">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-5 sm:gap-4">
                       {/* Company Logo */}
-                      <div className="w-16 h-16 bg-gradient-to-br from-platinum to-silver rounded-xl 
-                                     flex items-center justify-center text-obsidian font-bold text-lg shadow-lg flex-shrink-0">
+                      <div className="w-20 h-20 sm:w-16 sm:h-16 bg-gradient-to-br from-platinum to-silver rounded-xl 
+                                     flex items-center justify-center text-obsidian font-bold text-xl sm:text-lg shadow-lg flex-shrink-0">
                         {experience.logo}
                       </div>
                       
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-xl sm:text-2xl font-semibold text-platinum mb-2 leading-tight">
+                        <h3 className="text-2xl sm:text-xl md:text-2xl font-semibold text-platinum mb-3 sm:mb-2 leading-tight">
                           {experience.position}
                         </h3>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-silver text-sm sm:text-base">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-2 md:gap-4 text-silver text-base sm:text-sm md:text-base">
                           <div className="flex items-center gap-2">
-                            <Building className="w-4 h-4 flex-shrink-0" />
+                            <Building className="w-5 h-5 sm:w-4 sm:h-4 flex-shrink-0" />
                             <span className="font-medium truncate">{experience.company}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4 flex-shrink-0" />
+                            <MapPin className="w-5 h-5 sm:w-4 sm:h-4 flex-shrink-0" />
                             <span className="truncate">{experience.location}</span>
                           </div>
                         </div>
@@ -149,29 +135,29 @@ const Experience: React.FC = () => {
                     </div>
 
                     {/* Duration and Type */}
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <div className="flex items-center gap-2 text-silver text-sm sm:text-base">
-                        <Calendar className="w-4 h-4 flex-shrink-0" />
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-2 md:gap-4">
+                      <div className="flex items-center gap-2 text-silver text-base sm:text-sm md:text-base">
+                        <Calendar className="w-5 h-5 sm:w-4 sm:h-4 flex-shrink-0" />
                         <span className="font-medium">{experience.duration}</span>
                       </div>
-                      <span className="px-3 py-1 bg-steel/30 text-platinum text-sm rounded-full border border-steel/30 w-fit">
+                      <span className="px-4 py-2 sm:px-3 sm:py-1 bg-steel/30 text-platinum text-base sm:text-sm rounded-full border border-steel/30 w-fit">
                         {experience.type}
                       </span>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-silver text-sm sm:text-base lg:text-lg leading-relaxed mb-6">
+                  <p className="text-silver text-base sm:text-sm md:text-base lg:text-lg leading-relaxed mb-8 sm:mb-6">
                     {experience.description}
                   </p>
 
                   {/* Achievements */}
-                  <div className="mb-6">
-                    <h4 className="text-platinum font-semibold mb-3 text-base sm:text-lg">Key Achievements:</h4>
-                    <ul className="space-y-2">
+                  <div className="mb-8 sm:mb-6">
+                    <h4 className="text-platinum font-semibold mb-4 sm:mb-3 text-lg sm:text-base md:text-lg">Key Achievements:</h4>
+                    <ul className="space-y-3 sm:space-y-2">
                       {experience.achievements.map((achievement, achievementIndex) => (
-                        <li key={achievementIndex} className="flex items-start gap-3 text-silver text-sm sm:text-base">
-                          <div className="w-2 h-2 bg-platinum rounded-full mt-2 flex-shrink-0"></div>
+                        <li key={achievementIndex} className="flex items-start gap-4 sm:gap-3 text-silver text-base sm:text-sm md:text-base">
+                          <div className="w-3 h-3 sm:w-2 sm:h-2 bg-platinum rounded-full mt-2 flex-shrink-0"></div>
                           <span className="leading-relaxed">{achievement}</span>
                         </li>
                       ))}
@@ -179,11 +165,11 @@ const Experience: React.FC = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3 sm:gap-2">
                     {experience.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 sm:px-3 py-1 bg-slate/50 text-silver text-xs sm:text-sm rounded-full border border-steel/30
+                        className="px-3 sm:px-2 md:px-3 py-2 sm:py-1 bg-slate/50 text-silver text-sm sm:text-xs md:text-sm rounded-full border border-steel/30
                                    hover:border-platinum/50 hover:text-platinum transition-colors"
                       >
                         {tech}
@@ -202,15 +188,16 @@ const Experience: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
+          className="text-center mt-20 sm:mt-16"
         >
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-platinum text-obsidian rounded-lg font-semibold text-base sm:text-lg
+            className="px-8 sm:px-6 md:px-8 py-4 sm:py-3 md:py-4 bg-platinum text-obsidian rounded-lg font-semibold text-lg sm:text-base md:text-lg
                        hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl"
+            onClick={() => window.open('https://drive.google.com/file/d/1oMVo0ut4BzpxZrmPdL2ytrJMAyLx13a-/view?usp=sharing', '_blank')}
           >
-            <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2" />
+            <ExternalLink className="w-5 h-5 sm:w-4 sm:h-4 md:w-5 md:h-5 inline mr-2" />
             Download Full Resume
           </motion.button>
         </motion.div>

@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
               >
                 <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-4">Joseph Yaw Agyeman</h3>
                 <p className="text-silver text-sm sm:text-lg leading-relaxed max-w-md">
-                  A passionate developer dedicated to creating exceptional digital experiences 
-                  and innovative solutions that make a difference.
+                  A passionate Full Stack Developer & AI/ML Engineer dedicated to creating intelligent applications 
+                  and innovative solutions that drive business value.
                 </p>
               </motion.div>
             </div>
@@ -71,9 +71,9 @@ const Footer: React.FC = () => {
             >
               <h4 className="text-platinum font-semibold mb-4 text-base sm:text-lg">Contact</h4>
               <ul className="space-y-2 text-silver text-sm sm:text-base">
-                <li>hello@josephagyeman.com</li>
-                <li>+1 (555) 123-4567</li>
-                <li>San Francisco, CA</li>
+                <li>agyemanjoseph12@yahoo.com</li>
+                <li>+90 538 243 24 00</li>
+                <li>Adapazari, Sakarya Turkey</li>
               </ul>
             </motion.div>
           </div>
@@ -106,13 +106,18 @@ const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex justify-center sm:justify-start gap-3 sm:gap-4 lg:gap-6 flex-wrap"
             >
-              {['LinkedIn', 'GitHub', 'Twitter', 'Dribbble'].map((social, index) => (
+              {[
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/' },
+              { name: 'GitHub', url: 'https://github.com/TRINITY-21' }
+            ].map((social, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-silver hover:text-platinum transition-colors duration-300 text-sm sm:text-base px-2 py-1"
                 >
-                  {social}
+                  {social.name}
                 </a>
               ))}
             </motion.div>

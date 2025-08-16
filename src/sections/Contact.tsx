@@ -1,8 +1,11 @@
+import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
 import { CheckCircle, Mail, MapPin, Phone, Send } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import { EMAILJS_CONFIG } from '../config/emailjs'
 
 const Contact: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,57 +14,79 @@ const Contact: React.FC = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    // Map EmailJS field names to formData keys
+    const fieldMapping: { [key: string]: string } = {
+      'user_name': 'name',
+      'user_email': 'email',
+      'subject': 'subject',
+      'message': 'message'
+    }
+    
+    const formDataKey = fieldMapping[name] || name
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [formDataKey]: value
     })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError('')
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+    try {
+      const result = await emailjs.sendForm(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        formRef.current!,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      )
+      
+      console.log('Email sent successfully:', result.text)
+      setIsSubmitted(true)
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      }, 3000)
+      
+    } catch (error) {
+      console.error('Email send failed:', error)
+      setError('Failed to send message. Please try again or contact me directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "hello@josephagyeman.com",
-      link: "mailto:hello@josephagyeman.com"
+      value: "agyemanjoseph12@yahoo.com",
+      link: "mailto:agyemanjoseph12@yahoo.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+90 538 243 24 00",
+      link: "tel:+905382432400"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Adapazari, Sakarya Turkey",
       link: "#"
     }
   ]
 
   const socialLinks = [
-    { name: "LinkedIn", url: "#", icon: "in" },
-    { name: "GitHub", url: "#", icon: "gh" },
-    { name: "Twitter", url: "#", icon: "tw" },
-    { name: "Dribbble", url: "#", icon: "db" }
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/", icon: "in" },
+    { name: "GitHub", url: "https://github.com/TRINITY-21", icon: "gh" }
   ]
 
   return (
@@ -166,7 +191,7 @@ const Contact: React.FC = () => {
             className="bg-slate/30 backdrop-blur-sm rounded-2xl p-8 border border-steel/30"
           >
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-platinum font-medium mb-2 text-sm sm:text-base">
@@ -175,7 +200,7 @@ const Contact: React.FC = () => {
                     <input
                       type="text"
                       id="name"
-                      name="name"
+                      name="user_name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
@@ -192,7 +217,7 @@ const Contact: React.FC = () => {
                     <input
                       type="email"
                       id="email"
-                      name="email"
+                      name="user_email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
@@ -239,6 +264,16 @@ const Contact: React.FC = () => {
                     placeholder="Tell me more about your project..."
                   />
                 </div>
+
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg"
+                  >
+                    <p className="text-red-400 text-sm">{error}</p>
+                  </motion.div>
+                )}
 
                 <motion.button
                   type="submit"

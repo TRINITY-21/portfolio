@@ -61,7 +61,7 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-platinum/30">
                 <img 
-                  src="/me.png" 
+                  src="/me.jpeg" 
                   alt="Joseph Yaw Agyeman - Professional Headshot"
                   className="w-full h-full object-cover"
                 />
@@ -89,22 +89,23 @@ const About: React.FC = () => {
             {/* Main Description */}
             <div className="space-y-4 sm:space-y-6">
               <p className="text-silver text-base sm:text-lg leading-relaxed">
-                I'm a dedicated Full Stack Developer with over 5 years of experience in building 
-                modern web applications. My journey in technology began with a curiosity about 
+                I'm a dedicated Full Stack Developer and AI/ML Engineer with over 5 years of experience in building 
+                modern web applications and intelligent systems. My journey in technology began with a curiosity about 
                 how things work, which evolved into a passion for creating digital solutions 
                 that make a real impact.
               </p>
               
               <p className="text-silver text-base sm:text-lg leading-relaxed">
-                I specialize in React, Node.js, and cloud technologies, with a strong focus on 
-                performance, scalability, and user experience. Every project I work on is an 
-                opportunity to learn, grow, and push the boundaries of what's possible.
+                I specialize in Django, React, Next.js, and AI/ML technologies, with a strong focus on 
+                performance, scalability, and intelligent automation. Every project I work on is an 
+                opportunity to learn, grow, and push the boundaries of what's possible with modern technology.
               </p>
 
               <p className="text-silver text-base sm:text-lg leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, contributing to 
-                open-source projects, or sharing knowledge with the developer community. I believe 
-                in continuous learning and staying ahead of industry trends.
+                Based in Adapazari, Sakarya Turkey, I'm passionate about building distributed systems, 
+                implementing DevOps practices, and creating AI-powered solutions. When I'm not coding, 
+                you'll find me exploring new technologies, contributing to open-source projects, 
+                or sharing knowledge with the developer community.
               </p>
             </div>
 

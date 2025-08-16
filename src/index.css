@@ -18,7 +18,27 @@
   }
   
   .container-max {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+  }
+  
+  .hero-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+  }
+  
+  .content-constraint {
+    @apply max-w-4xl mx-auto;
+  }
+  
+  .ultra-wide-constraint {
+    @apply max-w-5xl mx-auto;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+    /* Fallback for browsers that don't support text-wrap: balance */
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .gradient-text {
