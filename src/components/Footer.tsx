@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowUp, Heart } from 'lucide-react'
+import { ArrowUp, Github, Linkedin } from 'lucide-react'
 import React from 'react'
 
 const Footer: React.FC = () => {
@@ -10,135 +10,117 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-obsidian border-t border-steel/30 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 
-                       bg-gradient-to-b from-platinum to-transparent rounded-full blur-3xl"></div>
-      </div>
+    <footer className="relative overflow-hidden border-t border-white/[0.04]">
+      <div className="absolute inset-0 bg-grid opacity-10" />
 
       <div className="container-max relative z-10">
-        <div className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
-          {/* Main Footer Content */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+        <div className="py-12 sm:py-16 lg:py-20">
+          {/* Main Footer */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {/* Brand */}
             <div className="sm:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="mb-6"
-              >
-                <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-4">Joseph Yaw Agyeman</h3>
-                <p className="text-silver text-sm sm:text-lg leading-relaxed max-w-md">
-                  A passionate Full Stack Developer & AI/ML Engineer dedicated to creating intelligent applications 
-                  and innovative solutions that drive business value.
-                </p>
-              </motion.div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+                  <span className="text-accent font-mono font-bold text-sm">J</span>
+                </div>
+                <span className="text-pearl font-semibold text-sm tracking-tight">
+                  joseph<span className="text-accent">.dev</span>
+                </span>
+              </div>
+              <p className="text-silver text-sm leading-relaxed max-w-md">
+                Full Stack Developer & AI/ML Engineer crafting intelligent applications
+                and innovative solutions that drive business value.
+              </p>
+
+              {/* Social Links */}
+              <div className="flex gap-3 mt-6">
+                <a
+                  href="https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06]
+                             flex items-center justify-center text-silver hover:text-accent
+                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-110 transition-all duration-300"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://github.com/TRINITY-21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06]
+                             flex items-center justify-center text-silver hover:text-accent
+                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-110 transition-all duration-300"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
             {/* Quick Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="px-2 sm:px-0"
-            >
-              <h4 className="text-platinum font-semibold mb-4 text-base sm:text-lg">Quick Links</h4>
-              <ul className="space-y-2">
-                {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'].map((link, index) => (
-                  <li key={index}>
+            <div>
+              <h4 className="text-pearl font-medium text-sm mb-4 tracking-wide">Navigation</h4>
+              <ul className="space-y-2.5">
+                {[
+                  { label: 'Home', href: '#home' },
+                  { label: 'About', href: '#about' },
+                  { label: 'Skills', href: '#skills' },
+                  { label: 'Projects', href: '#projects' },
+                  { label: 'Vibe Coded', href: '#vibe-coded' },
+                  { label: 'Experience', href: '#experience' },
+                  { label: 'Contact', href: '#contact' },
+                ].map((link) => (
+                  <li key={link.label}>
                     <a
-                      href={`#${link.toLowerCase()}`}
-                      className="text-silver hover:text-platinum transition-colors duration-300 text-sm sm:text-base"
+                      href={link.href}
+                      className="text-silver text-sm hover:text-accent hover:translate-x-1 transition-all duration-300 inline-block"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="px-2 sm:px-0"
-            >
-              <h4 className="text-platinum font-semibold mb-4 text-base sm:text-lg">Contact</h4>
-              <ul className="space-y-2 text-silver text-sm sm:text-base">
+            {/* Contact */}
+            <div>
+              <h4 className="text-pearl font-medium text-sm mb-4 tracking-wide">Contact</h4>
+              <ul className="space-y-2.5 text-silver text-sm break-all sm:break-normal">
                 <li>agyemanjoseph12@yahoo.com</li>
                 <li>+90 538 243 24 00</li>
                 <li>Adapazari, Sakarya Turkey</li>
               </ul>
-            </motion.div>
+            </div>
           </div>
 
           {/* Divider */}
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-steel to-transparent mb-6 sm:mb-8"></div>
+          <div className="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-8" />
 
-          {/* Bottom Footer */}
-          <div className="flex flex-col gap-4 sm:gap-6 px-2 sm:px-0">
-            {/* Copyright */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center sm:text-left"
-            >
-              <p className="text-silver text-sm sm:text-base flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1">
-                <span>© {currentYear} Joseph Yaw Agyeman. Made with</span>
-                <Heart className="w-4 h-4 text-red-500 inline" />
-                <span>and lots of coffee.</span>
-              </p>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex justify-center sm:justify-start gap-3 sm:gap-4 lg:gap-6 flex-wrap"
-            >
-              {[
-              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/' },
-              { name: 'GitHub', url: 'https://github.com/TRINITY-21' }
-            ].map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-silver hover:text-platinum transition-colors duration-300 text-sm sm:text-base px-2 py-1"
-                >
-                  {social.name}
-                </a>
-              ))}
-            </motion.div>
+          {/* Bottom */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-silver/60 text-xs">
+              &copy; {currentYear} Joseph Yaw Agyeman. All rights reserved.
+            </p>
+            <p className="text-silver/40 text-xs font-mono">
+              Built with React + TypeScript
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top */}
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
         onClick={scrollToTop}
-        whileHover={{ scale: 1.1, y: -2 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-platinum to-silver 
-                   text-obsidian rounded-full shadow-lg hover:shadow-xl transition-all duration-300
-                   flex items-center justify-center z-40"
+        className="fixed bottom-6 right-6 w-11 h-11 rounded-xl bg-accent/10 border border-accent/20
+                   text-accent flex items-center justify-center z-40
+                   hover:bg-accent/20 hover:shadow-glow transition-all duration-300"
       >
-        <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
+        <ArrowUp className="w-4 h-4" />
       </motion.button>
     </footer>
   )

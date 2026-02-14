@@ -5,96 +5,155 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
+
   body {
     @apply bg-obsidian text-pearl font-sans;
+  }
+
+  /* Subtle noise/grain texture overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-accent-200;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-20 sm:py-24 lg:py-32 xl:py-36 px-4 sm:px-6 lg:px-8;
   }
-  
+
   .container-max {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .hero-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .content-constraint {
-    @apply max-w-4xl mx-auto;
+    @apply max-w-3xl mx-auto;
   }
-  
-  .ultra-wide-constraint {
-    @apply max-w-5xl mx-auto;
+
+  /* Section label - monospace code style */
+  .section-label {
+    @apply font-mono text-accent text-xs sm:text-sm tracking-wider uppercase mb-4 inline-block;
   }
-  
-  .text-balance {
-    text-wrap: balance;
-    /* Fallback for browsers that don't support text-wrap: balance */
-    max-width: 65ch;
-    margin-left: auto;
-    margin-right: auto;
+
+  /* Section heading */
+  .section-heading {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-pearl tracking-tight;
   }
-  
+
+  /* Gradient text with accent colors */
   .gradient-text {
-    @apply bg-gradient-to-r from-platinum to-silver bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-pearl via-platinum to-silver bg-clip-text text-transparent;
   }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+
+  .gradient-text-accent {
+    @apply bg-gradient-to-r from-accent-300 via-accent to-accent-500 bg-clip-text text-transparent;
   }
-  
+
+  /* Glass card — standardized transition */
+  .glass-card {
+    @apply bg-steel/40 backdrop-blur-xl rounded-2xl border border-white/[0.06]
+           transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-accent/20 shadow-card-hover -translate-y-0.5;
+  }
+
+  /* Premium button styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-accent text-obsidian font-semibold rounded-xl
+           hover:bg-accent-400 transition-all duration-300
+           shadow-glow hover:shadow-glow-lg text-sm tracking-wide;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border border-accent/40 text-accent font-medium rounded-xl
+           hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 text-sm tracking-wide;
+  }
+
+  /* Navigation link */
   .nav-link {
-    @apply relative px-3 py-2 text-silver hover:text-platinum transition-colors duration-200;
+    @apply relative px-1 py-2 text-silver text-xs font-medium tracking-wide
+           hover:text-pearl transition-colors duration-300 uppercase;
   }
-  
+
   .nav-link::after {
-    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-platinum transition-all duration-300;
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-[2px] bg-accent transition-all duration-300;
   }
-  
+
   .nav-link:hover::after {
     @apply w-full;
   }
-  
+
+  /* Availability badge */
   .availability-badge {
     @apply relative overflow-hidden;
   }
-  
-  .availability-badge::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-platinum/20 to-silver/20 rounded-full blur-xl;
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-  
+
   .availability-dot {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
-  
+
   .availability-dot::after {
     content: '';
-    @apply absolute inset-0 w-3 h-3 bg-platinum rounded-full;
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    @apply absolute inset-0 w-2 h-2 bg-emerald-400 rounded-full;
+    animation: ping-dot 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Tech tag */
+  .tech-tag {
+    @apply px-3 py-1 text-xs font-mono font-medium rounded-md
+           bg-accent/[0.06] text-accent/80 border border-accent/10
+           hover:border-accent/30 hover:text-accent hover:bg-accent/10 transition-all duration-300;
+  }
+
+  /* Subtle grid background */
+  .bg-grid {
+    background-image: linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Accent line */
+  .accent-line {
+    @apply w-16 h-[2px] bg-gradient-to-r from-accent to-accent/30 shadow-[0_0_8px_rgba(6,182,212,0.3)];
+  }
+
+  /* Input field — simplified */
+  .input-field {
+    @apply w-full px-4 py-3 bg-obsidian/60 border border-white/[0.06] rounded-xl
+           text-pearl placeholder-silver/40 text-sm
+           focus:outline-none focus:border-accent/30 focus:shadow-[0_0_0_3px_rgba(6,182,212,0.08)]
+           transition-all duration-300;
   }
 }
 
-@keyframes glow {
-  0% { box-shadow: 0 0 20px rgba(229, 229, 229, 0.3); }
-  100% { box-shadow: 0 0 30px rgba(229, 229, 229, 0.6); }
-}
-
-@keyframes pulse {
+@keyframes pulse-dot {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  50% { opacity: 0.6; }
 }
 
-@keyframes ping {
+@keyframes ping-dot {
   75%, 100% {
-    transform: scale(2);
+    transform: scale(2.5);
     opacity: 0;
   }
 }

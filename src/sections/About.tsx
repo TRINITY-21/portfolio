@@ -5,128 +5,171 @@ import React from 'react'
 const About: React.FC = () => {
   const features = [
     {
-      icon: <Target className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Goal-Oriented",
-      description: "Focused on delivering results that exceed expectations and drive business growth."
+      icon: <Target className="w-5 h-5" />,
+      title: "End-to-End Ownership",
+      description: "From architecture design to CI/CD deployment — I own the full lifecycle of features and systems."
     },
     {
-      icon: <Award className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Quality-Driven",
-      description: "Committed to writing clean, maintainable code and creating exceptional user experiences."
+      icon: <Award className="w-5 h-5" />,
+      title: "Production-Grade Code",
+      description: "Clean, tested, and maintainable code with proper documentation, reviews, and engineering best practices."
     },
     {
-      icon: <Heart className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Passionate",
-      description: "Genuinely excited about technology and its potential to solve real-world problems."
+      icon: <Heart className="w-5 h-5" />,
+      title: "AI-Augmented Builder",
+      description: "Early adopter of AI-assisted development, shipping full applications in days using modern AI tools."
     },
     {
-      icon: <User className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "User-Centric",
-      description: "Always putting the end-user first, ensuring intuitive and accessible design."
+      icon: <User className="w-5 h-5" />,
+      title: "Team Multiplier",
+      description: "I build reusable libraries, mentor junior devs, and streamline processes that make the whole team faster."
     }
   ]
 
   return (
-    <section id="about" className="section-padding bg-charcoal relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-platinum to-silver rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-tl from-steel to-silver rounded-full blur-3xl"></div>
-      </div>
+    <section id="about" className="section-padding relative overflow-hidden">
+      {/* Subtle background */}
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-[120px]" />
 
       <div className="container-max relative z-10">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16 sm:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text mb-6">
-            About Me
+          <span className="section-label">// about</span>
+          <h2 className="section-heading">
+            Get to know me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-platinum to-silver mx-auto"></div>
+          <div className="accent-line mt-6" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Left Column - Image and Personal Info */}
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+          {/* Left Column - Image */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6 sm:space-y-8 order-2 lg:order-1"
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-2"
           >
-            {/* Profile Image */}
-            <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-platinum/30">
-                <img 
-                  src="/me.jpeg" 
-                  alt="Joseph Yaw Agyeman - Professional Headshot"
-                  className="w-full h-full object-cover"
-                />
+            <div className="relative max-w-sm mx-auto lg:mx-0">
+              {/* Animated corner brackets — top-left */}
+              <div className="absolute -top-3 -left-3 w-10 h-10 z-20">
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent to-transparent" />
+                <div className="absolute top-0 left-0 h-full w-[2px] bg-gradient-to-b from-accent to-transparent" />
               </div>
-              
-            </div>
+              {/* Top-right */}
+              <div className="absolute -top-3 -right-3 w-10 h-10 z-20">
+                <div className="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-accent to-transparent" />
+                <div className="absolute top-0 right-0 h-full w-[2px] bg-gradient-to-b from-accent to-transparent" />
+              </div>
+              {/* Bottom-left */}
+              <div className="absolute -bottom-3 -left-3 w-10 h-10 z-20">
+                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent to-transparent" />
+                <div className="absolute bottom-0 left-0 h-full w-[2px] bg-gradient-to-t from-accent to-transparent" />
+              </div>
+              {/* Bottom-right */}
+              <div className="absolute -bottom-3 -right-3 w-10 h-10 z-20">
+                <div className="absolute bottom-0 right-0 w-full h-[2px] bg-gradient-to-l from-accent to-transparent" />
+                <div className="absolute bottom-0 right-0 h-full w-[2px] bg-gradient-to-t from-accent to-transparent" />
+              </div>
 
-            {/* Personal Info */}
-            <div className="text-center lg:text-left space-y-4">
-              <h3 className="text-xl sm:text-2xl font-semibold text-platinum">Joseph Yaw Agyeman</h3>
-              <p className="text-silver text-base sm:text-lg">
-                A passionate developer with a love for creating innovative solutions and beautiful user experiences.
-              </p>
+              {/* Glow behind image */}
+              <div className="absolute -inset-4 bg-accent/[0.04] rounded-3xl blur-2xl -z-10" />
+
+              {/* Outer dashed border frame */}
+              <div className="absolute -inset-2 rounded-2xl border border-dashed border-accent/[0.12] -z-10" />
+
+              {/* Image container */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] shadow-card group
+                            hover:border-accent/20 hover:shadow-glow transition-all duration-500">
+                <img
+                  src="/me.jpeg"
+                  alt="Joseph Yaw Agyeman"
+                  className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-transparent" />
+                {/* Cyan tint overlay */}
+                <div className="absolute inset-0 bg-accent/[0.04] mix-blend-overlay" />
+
+                {/* Scanline effect */}
+                <div
+                  className="absolute inset-0 opacity-[0.08] pointer-events-none"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6,182,212,0.15) 2px, rgba(6,182,212,0.15) 4px)',
+                  }}
+                />
+
+                {/* Bottom info bar */}
+                <div className="absolute bottom-0 inset-x-0 px-4 py-3 flex items-center justify-between">
+                  <span className="font-mono text-xs text-accent/60 tracking-widest uppercase">joseph.dev</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                    <span className="font-mono text-xs text-accent/60">online</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
 
           {/* Right Column - Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6 sm:space-y-8 order-1 lg:order-2"
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-3 space-y-8"
           >
-            {/* Main Description */}
-            <div className="space-y-4 sm:space-y-6">
-              <p className="text-silver text-base sm:text-lg leading-relaxed">
-                I'm a dedicated Full Stack Developer and AI/ML Engineer with over 5 years of experience in building 
-                modern web applications and intelligent systems. My journey in technology began with a curiosity about 
-                how things work, which evolved into a passion for creating digital solutions 
-                that make a real impact.
-              </p>
-              
-              <p className="text-silver text-base sm:text-lg leading-relaxed">
-                I specialize in Django, React, Next.js, and AI/ML technologies, with a strong focus on 
-                performance, scalability, and intelligent automation. Every project I work on is an 
-                opportunity to learn, grow, and push the boundaries of what's possible with modern technology.
+            {/* Bio */}
+            <div className="space-y-5">
+              <p className="text-silver text-base leading-[1.8]">
+                I'm a <span className="text-pearl">Full Stack Developer and AI/ML Engineer</span> with over
+                5 years of experience shipping production software across B2B platforms, fintech, and
+                cybersecurity. My core stack is <span className="text-accent">Django</span>, <span className="text-accent">React/Next.js</span>,
+                and TypeScript, backed by PostgreSQL, Redis, and Elasticsearch — deployed
+                on <span className="text-accent">AWS</span> with Docker, Kubernetes, and CI/CD pipelines I architect myself.
+                At <span className="text-pearl">KNG Technologies</span>, I lead the development of distributed
+                workflow services, Kafka data pipelines, and DevOps infrastructure.
               </p>
 
-              <p className="text-silver text-base sm:text-lg leading-relaxed">
-                Based in Adapazari, Sakarya Turkey, I'm passionate about building distributed systems, 
-                implementing DevOps practices, and creating AI-powered solutions. When I'm not coding, 
-                you'll find me exploring new technologies, contributing to open-source projects, 
-                or sharing knowledge with the developer community.
+              <p className="text-silver text-base leading-[1.8]">
+                What sets me apart is my ability to pair deep engineering fundamentals with
+                cutting-edge <span className="text-accent">AI/ML</span> — from training models with TensorFlow
+                and PyTorch to leveraging LLMs for automation. I'm also an early adopter
+                of <span className="text-pearl">AI-assisted development</span>, using tools like Claude and
+                Cursor to ship full applications in days. Based in Turkey, open to remote roles worldwide,
+                and I thrive in fast-moving teams where I can own problems end-to-end.
               </p>
             </div>
 
-            {/* Key Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-6 sm:pt-8">
+            {/* Feature Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center p-4 sm:p-6 rounded-xl bg-slate/30 backdrop-blur-sm 
-                             border border-steel/30 hover:border-platinum/50 transition-all duration-300
-                             hover:bg-slate/50 group"
+                  transition={{ duration: 0.3, delay: index * 0.08 }}
+                  className="glass-card p-4 sm:p-6 group"
                 >
-                  <div className="text-platinum mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
+                  <div className="flex items-start gap-3.5">
+                    <div className="p-2 rounded-lg bg-accent/[0.06] text-accent border border-accent/10
+                                    group-hover:bg-accent/10 group-hover:border-accent/20 transition-all duration-300">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-pearl font-medium text-sm mb-1">{feature.title}</h4>
+                      <p className="text-silver text-sm leading-relaxed">{feature.description}</p>
+                    </div>
                   </div>
-                  <h4 className="text-platinum font-semibold mb-2 text-sm sm:text-base">{feature.title}</h4>
-                  <p className="text-silver text-xs sm:text-sm leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>

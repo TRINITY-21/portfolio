@@ -6,6 +6,7 @@ import Experience from './sections/Experience'
 import Hero from './sections/Hero'
 import Projects from './sections/Projects'
 import Skills from './sections/Skills'
+import VibeCoded from './sections/VibeCoded'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <VibeCoded />
         <Experience />
         <Contact />
       </main>

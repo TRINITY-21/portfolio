@@ -1,198 +1,94 @@
 import { motion } from 'framer-motion'
-import { Cloud, Code, Database, Globe, Palette, Smartphone } from 'lucide-react'
 import React from 'react'
 
 const Skills: React.FC = () => {
-  const skillCategories = [
+  const skillGroups = [
     {
-      icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Programming Languages",
-      skills: [
-        { name: "Python", level: 95 },
-        { name: "JAVA", level: 90 },
-        { name: "JavaScript", level: 95 },
-        { name: "TypeScript", level: 92 }
-      ]
+      label: "Languages",
+      skills: ["Python", "Java", "JavaScript", "TypeScript"],
     },
     {
-      icon: <Database className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Frameworks & Libraries",
-      skills: [
-        { name: "Django", level: 95 },
-        { name: "Django REST Framework", level: 92 },
-        { name: "React", level: 90 },
-        { name: "Nextjs", level: 85 },
-        { name: "Springboot", level: 88 },
-        { name: "HTML/CSS", level: 98 },
-        { name: "Tailwind CSS", level: 92 },
-
-      ]
+      label: "Frontend",
+      skills: ["React", "Next.js", "Tailwind CSS", "HTML/CSS", "Framer Motion"],
     },
     {
-      icon: <Cloud className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Databases & Search",
-      skills: [
-        { name: "PostgreSQL", level: 90 },
-        { name: "MySQL", level: 88 },
-        { name: "MongoDB", level: 85 },
-        { name: "Elasticsearch", level: 82 },
-        { name: "Redis", level: 88 }
-      ]
+      label: "Backend",
+      skills: ["Django", "Django REST", "Spring Boot", "GraphQL", "REST APIs"],
     },
     {
-      icon: <Palette className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Architecture & APIs",
-      skills: [
-        { name: "Microservices", level: 88 },
-        { name: "Distributed Systems", level: 85 },
-        { name: "REST APIs", level: 92 },
-        { name: "GraphQL", level: 80 }
-      ]
+      label: "Databases",
+      skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Elasticsearch"],
     },
     {
-      icon: <Smartphone className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "Message Brokers & Caching",
-      skills: [
-        { name: "RabbitMQ", level: 85 },
-        { name: "Kafka", level: 82 },
-        { name: "Redis Search", level: 80 },
-        { name: "Redis Caching", level: 88 }
-      ]
+      label: "Infrastructure",
+      skills: ["Docker", "Kubernetes", "AWS", "Helm", "Linux", "Nginx"],
     },
     {
-      icon: <Globe className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "DevOps & Cloud",
-      skills: [
-        { name: "Docker", level: 88 },
-        { name: "Kubernetes", level: 85 },
-        { name: "AWS", level: 90 },
-        { name: "Git", level: 95 },
-        { name: "GitHub Actions", level: 88 },
-        { name: "Circle CI", level: 85 }
-      ]
+      label: "CI/CD",
+      skills: ["GitHub Actions", "CircleCI", "GitLab CI/CD", "AWS CodePipeline"],
     },
     {
-      icon: <Code className="w-6 h-6 sm:w-8 sm:h-8" />,
-      title: "AI & Machine Learning",
-      skills: [
-        { name: "Machine Learning", level: 85 },
-        { name: "Deep Learning", level: 80 },
-        { name: "Natural Language Processing", level: 82 },
-        { name: "Large Language Models", level: 88 },
-        { name: "TensorFlow", level: 85 },
-        { name: "PyTorch", level: 80 }
-      ]
-    }
+      label: "Architecture",
+      skills: ["Microservices", "Distributed Systems", "Kafka", "RabbitMQ", "Event-Driven"],
+    },
+    {
+      label: "AI / ML",
+      skills: ["TensorFlow", "PyTorch", "NLP", "LLMs", "Deep Learning", "Computer Vision"],
+    },
+    {
+      label: "Practices",
+      skills: ["Agile", "SCRUM", "TDD", "OOP", "Code Review", "System Design"],
+    },
   ]
 
   return (
-    <section id="skills" className="section-padding bg-slate relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-bl from-platinum to-silver rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-steel to-silver rounded-full blur-3xl"></div>
-      </div>
+    <section id="skills" className="section-padding relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-grid opacity-20" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-[100px]" />
 
       <div className="container-max relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16 sm:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text mb-6">
-            Skills & Expertise
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-platinum to-silver mx-auto mb-6"></div>
-          <p className="text-silver text-base sm:text-lg max-w-3xl mx-auto px-4">
-            A comprehensive toolkit of technologies and frameworks that I've mastered over the years. 
-            From frontend to backend, I bring a full-stack approach to every project.
+          <span className="section-label">// skills</span>
+          <h2 className="section-heading">Tech Stack</h2>
+          <div className="accent-line mt-6" />
+          <p className="text-silver text-base max-w-2xl mt-6 leading-relaxed">
+            Tools and technologies I use to ship production software.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
-          {skillCategories.map((category, categoryIndex) => (
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+          {skillGroups.map((group, groupIndex) => (
             <motion.div
-              key={categoryIndex}
-              initial={{ opacity: 0, y: 30 }}
+              key={groupIndex}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
-              className="bg-charcoal/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-steel/30 
-                         hover:border-platinum/50 transition-all duration-300 hover:shadow-2xl"
+              transition={{ duration: 0.3, delay: groupIndex * 0.08 }}
+              className="glass-card p-4 sm:p-5"
             >
-              {/* Category Header */}
-              <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <div className="text-platinum p-2 sm:p-3 bg-steel/30 rounded-xl">
-                  {category.icon}
-                </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-platinum">{category.title}</h3>
-              </div>
-
-              {/* Skills List */}
-              <div className="space-y-4 sm:space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: (categoryIndex * 0.1) + (skillIndex * 0.05) }}
-                    className="space-y-2"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="text-silver font-medium text-sm sm:text-base">{skill.name}</span>
-                      <span className="text-platinum font-semibold text-sm sm:text-base">{skill.level}%</span>
-                    </div>
-                    
-                    {/* Skill Bar */}
-                    <div className="w-full bg-steel/30 rounded-full h-2 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5, delay: (categoryIndex * 0.1) + (skillIndex * 0.05) + 0.3 }}
-                        className="h-full bg-gradient-to-r from-platinum to-silver rounded-full"
-                      />
-                    </div>
-                  </motion.div>
+              <h3 className="text-xs font-mono text-accent/70 uppercase tracking-widest mb-3">
+                {group.label}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill, skillIndex) => (
+                  <span key={skillIndex} className="tech-tag">
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 sm:mt-16 text-center"
-        >
-          <h3 className="text-xl sm:text-2xl font-semibold text-platinum mb-6 sm:mb-8">Additional Skills</h3>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 px-4">
-            {[
-              "Agile Software Development", "SCRUM", "Object-Oriented Programming", "Test-driven Development",
-              "GitLab CI/CD", "AWS Code Pipeline", "Linux", "System Architecture",
-              "API Design", "Security Best Practices", "Team Collaboration", "Code Review",
-              "Data Science", "Neural Networks", "Computer Vision", "Predictive Modeling"
-            ].map((skill, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.8 + (index * 0.05) }}
-                className="px-3 py-2 bg-charcoal/50 border border-steel/30 rounded-full text-silver text-xs sm:text-sm
-                           hover:border-platinum/50 hover:text-platinum transition-all duration-300"
-              >
-                {skill}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )
