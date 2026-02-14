@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-obsidian to-transparent" />
 
-      <div className="hero-container text-center relative z-10 px-5 py-28 sm:py-0">
+      <div className="hero-container text-center relative z-10 py-28 sm:py-0">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            <p className="font-mono text-accent/80 text-sm sm:text-base tracking-wide">
+            <p className="font-mono text-accent/80 text-xs sm:text-base tracking-wide">
               {'<'} Full Stack Developer & AI/ML Engineer {'/>'}
             </p>
           </motion.div>
@@ -117,15 +117,15 @@ const Hero: React.FC = () => {
             transition={{ delay: 1.3, duration: 0.8 }}
             className="flex justify-center pt-12 sm:pt-16"
           >
-            <div className="inline-flex items-center divide-x divide-white/[0.06] px-6 sm:px-10 py-5 rounded-2xl
+            <div className="inline-flex items-center divide-x divide-white/[0.06] px-3 sm:px-10 py-5 rounded-2xl
                             bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm">
               {[
                 { number: '5+', label: 'Years' },
                 { number: '50+', label: 'Projects' },
                 { number: '100%', label: 'Satisfaction' }
               ].map((stat, index) => (
-                <div key={index} className="text-center px-6 sm:px-8">
-                  <div className="text-2xl sm:text-3xl font-bold text-pearl tracking-tight">{stat.number}</div>
+                <div key={index} className="text-center px-4 sm:px-8">
+                  <div className="text-xl sm:text-3xl font-bold text-pearl tracking-tight">{stat.number}</div>
                   <div className="text-silver/60 text-xs sm:text-sm font-medium mt-1">{stat.label}</div>
                 </div>
               ))}

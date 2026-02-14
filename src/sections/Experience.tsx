@@ -79,10 +79,10 @@ const Experience: React.FC = () => {
                   )}
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs text-accent/60 tracking-wider whitespace-nowrap">{exp.duration}</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                  <span className="font-mono text-[11px] sm:text-xs text-accent/60 tracking-wider whitespace-nowrap">{exp.duration}</span>
                   <span className="text-white/10">|</span>
-                  <span className="font-mono text-xs text-silver/40">{exp.location}</span>
+                  <span className="font-mono text-[11px] sm:text-xs text-silver/40 truncate">{exp.location}</span>
                 </div>
               </div>
 
