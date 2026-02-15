@@ -23,7 +23,7 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({ title, slug }) => {
   }
 
   const btnClass =
-    'w-9 h-9 rounded-lg flex items-center justify-center border border-line/[0.08] bg-steel/30 text-silver hover:text-accent hover:border-accent/20 hover:bg-accent/[0.06] transition-all duration-200'
+    'w-10 h-10 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center border border-line/[0.08] bg-steel/30 text-silver hover:text-accent hover:border-accent/20 hover:bg-accent/[0.06] transition-all duration-200'
 
   return (
     <div className="flex items-center gap-2">

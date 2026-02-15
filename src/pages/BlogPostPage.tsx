@@ -8,6 +8,7 @@ import rehypeRaw from 'rehype-raw'
 import rehypeSlug from 'rehype-slug'
 import { getAdjacentPosts, getPostBySlug } from '../blog/utils'
 import type { BlogPost, BlogPostMeta } from '../blog/types'
+import { updateBlogPostMeta, resetMetaTags } from '../utils/seo'
 import CodeBlock from '../components/blog/CodeBlock'
 import GiscusComments from '../components/blog/GiscusComments'
 import ReadingProgress from '../components/blog/ReadingProgress'
@@ -33,23 +34,18 @@ const BlogPostPage: React.FC = () => {
 
   useEffect(() => {
     if (post) {
-      document.title = `${post.title} | Joseph Yaw Agyeman`
-      document.querySelector('meta[name="description"]')?.setAttribute('content', post.description)
-      document.querySelector('meta[property="og:title"]')?.setAttribute('content', post.title)
-      document.querySelector('meta[property="og:description"]')?.setAttribute('content', post.description)
-      const ogImage = post.coverImage
-        ? `https://jagyeman.dev${post.coverImage}`
-        : `https://jagyeman.dev/og/${post.slug}.svg`
-      document.querySelector('meta[property="og:image"]')?.setAttribute('content', ogImage)
-      document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', ogImage)
+      updateBlogPostMeta({
+        title: post.title,
+        slug: post.slug,
+        description: post.description,
+        date: post.date,
+        updated: post.updated,
+        tags: post.tags,
+        coverImage: post.coverImage,
+      })
     }
     return () => {
-      document.title = 'Joseph Yaw Agyeman - Full Stack Developer & AI/ML Engineer'
-      document.querySelector('meta[name="description"]')?.setAttribute('content', 'Joseph Yaw Agyeman - Full Stack Developer & AI/ML Engineer. Professional portfolio showcasing skills, projects, and experience in modern web development.')
-      document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'Joseph Yaw Agyeman - Full Stack Developer & AI/ML Engineer')
-      document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'Full Stack Developer & AI/ML Engineer crafting intelligent applications with Django, React/Next.js, TypeScript, AWS, and cutting-edge AI/ML technologies.')
-      document.querySelector('meta[property="og:image"]')?.setAttribute('content', 'https://jagyeman.dev/me.jpeg')
-      document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', 'https://jagyeman.dev/me.jpeg')
+      resetMetaTags()
     }
   }, [post])
 

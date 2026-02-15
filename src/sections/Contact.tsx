@@ -1,6 +1,6 @@
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
-import { CheckCircle, Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react'
+import { CheckCircle, Github, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter } from 'lucide-react'
 import React, { useRef, useState } from 'react'
 import { EMAILJS_CONFIG } from '../config/emailjs'
 
@@ -151,28 +151,25 @@ const Contact: React.FC = () => {
             <div>
               <h4 className="text-pearl font-medium text-sm mb-3">Connect</h4>
               <div className="flex gap-3">
-                <a
-                  href="https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
-                             flex items-center justify-center text-silver hover:text-accent
-                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://github.com/TRINITY-21"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
-                             flex items-center justify-center text-silver hover:text-accent
-                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
-                >
-                  <Github className="w-4 h-4" />
-                </a>
+                {[
+                  { icon: <Linkedin className="w-4 h-4" />, href: 'https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/', label: 'LinkedIn' },
+                  { icon: <Github className="w-4 h-4" />, href: 'https://github.com/TRINITY-21', label: 'GitHub' },
+                  { icon: <Twitter className="w-4 h-4" />, href: 'https://twitter.com/iam_not_trinity', label: 'X' },
+                  { icon: <Instagram className="w-4 h-4" />, href: 'https://instagram.com/trinity__21_', label: 'Instagram' },
+                ].map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
+                               flex items-center justify-center text-silver hover:text-accent
+                               hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </motion.div>

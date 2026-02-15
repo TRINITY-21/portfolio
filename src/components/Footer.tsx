@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowUp, Github, Linkedin } from 'lucide-react'
+import { ArrowUp, Github, Instagram, Linkedin, Twitter } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 
 const Footer: React.FC = () => {
@@ -64,6 +64,28 @@ const Footer: React.FC = () => {
                              hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
                 >
                   <Github className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://twitter.com/iam_not_trinity"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X / Twitter"
+                  className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
+                             flex items-center justify-center text-silver hover:text-accent
+                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
+                >
+                  <Twitter className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://instagram.com/trinity__21_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
+                             flex items-center justify-center text-silver hover:text-accent
+                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
+                >
+                  <Instagram className="w-4 h-4" />
                 </a>
               </div>
             </div>

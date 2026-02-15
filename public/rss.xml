@@ -5,8 +5,30 @@
     <link>https://jagyeman.dev/blog</link>
     <description>Articles on software engineering, AI/ML, system design, and building production systems.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Feb 2026 16:09:17 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Feb 2026 17:26:12 GMT</lastBuildDate>
     <atom:link href="https://jagyeman.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS Architecture Patterns Every Developer Should Know</title>
+      <link>https://jagyeman.dev/blog/aws-architecture-patterns</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/aws-architecture-patterns</guid>
+      <pubDate>Wed, 18 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Practical AWS architecture patterns for real-world applications — from simple deployments to event-driven architectures. Lambda, ECS, SQS, DynamoDB, and the trade-offs nobody tells you about.</description>
+      <category>AWS</category>
+      <category>Architecture</category>
+      <category>Backend</category>
+      <category>DevOps</category>
+    </item>
+    <item>
+      <title>React Patterns That Scale: Lessons From Production Applications</title>
+      <link>https://jagyeman.dev/blog/react-patterns-for-production</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/react-patterns-for-production</guid>
+      <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Battle-tested React patterns for building maintainable applications — compound components, custom hooks, render optimization, and state management strategies that survive real-world complexity.</description>
+      <category>React</category>
+      <category>TypeScript</category>
+      <category>Frontend</category>
+      <category>Architecture</category>
+    </item>
     <item>
       <title>The Rise of AI Agents: Building Autonomous Systems That Actually Work</title>
       <link>https://jagyeman.dev/blog/the-rise-of-ai-agents</link>

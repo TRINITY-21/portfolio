@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Award, Heart, Target, User } from 'lucide-react'
+import { Award, Github, Heart, Instagram, Linkedin, Target, Twitter, User } from 'lucide-react'
 import React from 'react'
 
 const About: React.FC = () => {
@@ -112,6 +112,40 @@ const About: React.FC = () => {
                     <span className="font-mono text-xs text-accent/60">online</span>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="mt-6 relative max-w-sm mx-auto lg:mx-0">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="h-px flex-1 bg-gradient-to-r from-accent/20 to-transparent" />
+                <span className="font-mono text-[10px] text-accent/40 tracking-widest uppercase">links</span>
+                <div className="h-px flex-1 bg-gradient-to-l from-accent/20 to-transparent" />
+              </div>
+              <div className="flex items-center justify-center gap-3">
+                {[
+                  { icon: <Linkedin className="w-4 h-4" />, href: 'https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/', label: 'LinkedIn' },
+                  { icon: <Github className="w-4 h-4" />, href: 'https://github.com/TRINITY-21', label: 'GitHub' },
+                  { icon: <Twitter className="w-4 h-4" />, href: 'https://twitter.com/iam_not_trinity', label: 'X' },
+                  { icon: <Instagram className="w-4 h-4" />, href: 'https://instagram.com/trinity__21_', label: 'Instagram' },
+                ].map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="group/social relative w-11 h-11 rounded-lg bg-line/[0.03] border border-line/[0.08]
+                               flex items-center justify-center text-silver
+                               hover:text-accent hover:border-accent/30 hover:bg-accent/[0.06]
+                               hover:shadow-[0_0_12px_rgba(6,182,212,0.1)] transition-all duration-300"
+                  >
+                    {social.icon}
+                    <span className="absolute -bottom-5 font-mono text-[9px] text-accent/0 group-hover/social:text-accent/50 transition-all duration-300">
+                      {social.label}
+                    </span>
+                  </a>
+                ))}
               </div>
             </div>
           </motion.div>

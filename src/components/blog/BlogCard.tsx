@@ -24,7 +24,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, index }) => {
     >
       <Link to={`/blog/${post.slug}`} className="block group">
         <div className="glass-card overflow-hidden h-full flex flex-col hover:border-line/[0.1] transition-all duration-300">
-          {post.coverImage && (
+          {post.coverImage ? (
             <div className="relative h-44 bg-steel/20 overflow-hidden">
               <img
                 src={post.coverImage}
@@ -35,7 +35,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, index }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/40" />
             </div>
-          )}
+          ) : null}
 
           <div className="p-5 sm:p-6 flex flex-col flex-1">
             <div className="flex items-center gap-2 text-silver text-xs font-mono mb-3">

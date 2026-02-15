@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import sharp from 'sharp'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const postsDir = path.resolve(__dirname, '../src/blog/posts')
@@ -131,7 +132,8 @@ for (const file of files) {
 
   const svg = generateSvg(parsed.meta.title, parsed.meta.tags, parsed.meta.date)
   fs.writeFileSync(path.join(outputDir, `${parsed.meta.slug}.svg`), svg)
+  await sharp(Buffer.from(svg)).png().toFile(path.join(outputDir, `${parsed.meta.slug}.png`))
   count++
 }
 
-console.log(`OG images generated: ${count} SVGs → public/og/`)
+console.log(`OG images generated: ${count} SVG + PNG pairs → public/og/`)

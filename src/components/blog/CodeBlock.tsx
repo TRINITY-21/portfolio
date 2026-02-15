@@ -14,7 +14,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ className, children, ...props }) 
   if (!match) {
     return (
       <code
-        className="bg-steel/40 text-accent px-1.5 py-0.5 rounded text-sm font-mono"
+        className="bg-accent/[0.1] text-accent-300 border border-accent/[0.15] px-1.5 py-0.5 rounded-md text-[0.875em] font-mono"
         {...props}
       >
         {children}
@@ -56,11 +56,14 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ className, children, ...props }) 
           )}
         </button>
       </div>
-      <pre className="p-4 overflow-x-auto text-sm leading-relaxed">
-        <code className={className} {...props}>
-          {children}
-        </code>
-      </pre>
+      <div className="relative">
+        <pre className="p-4 overflow-x-auto text-sm leading-relaxed">
+          <code className={className} {...props}>
+            {children}
+          </code>
+        </pre>
+        <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-[rgba(20,20,22,0.8)] to-transparent pointer-events-none sm:hidden" />
+      </div>
     </div>
   )
 }

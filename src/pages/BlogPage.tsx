@@ -4,13 +4,14 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { getAllPostsMeta } from '../blog/utils'
 import type { BlogPostMeta } from '../blog/types'
 import BlogCard from '../components/blog/BlogCard'
+import { updateMetaTags, resetMetaTags } from '../utils/seo'
 
 const TAG_CATEGORIES: Record<string, string[]> = {
   'AI & ML': ['AI', 'Agents', 'LLMs', 'Machine Learning', 'RAG', 'Vector Databases'],
   'Backend': ['Backend', 'Django', 'Python', 'REST API'],
   'Frontend': ['Frontend', 'TypeScript', 'React'],
   'Engineering': ['Software Engineering', 'Clean Code', 'Best Practices', 'Architecture'],
-  'DevOps': ['DevOps', 'CI/CD', 'GitHub Actions', 'Docker', 'Kubernetes'],
+  'DevOps': ['DevOps', 'CI/CD', 'GitHub Actions', 'Docker', 'Kubernetes', 'AWS'],
   'Career': ['Career', 'Productivity', 'Full Stack', 'Developer Tools'],
 }
 
@@ -24,13 +25,18 @@ const BlogPage: React.FC = () => {
   const POSTS_PER_PAGE = 9
 
   useEffect(() => {
-    document.title = 'Blog | Joseph Yaw Agyeman'
+    updateMetaTags({
+      title: 'Blog | Joseph Yaw Agyeman',
+      description: 'Articles on software architecture, AI/ML, web development, and lessons from building production systems.',
+      url: 'https://jagyeman.dev/blog',
+      type: 'website',
+    })
     getAllPostsMeta().then((data) => {
       setPosts(data)
       setLoading(false)
     })
     return () => {
-      document.title = 'Joseph Yaw Agyeman - Full Stack Developer & AI/ML Engineer'
+      resetMetaTags()
     }
   }, [])
 
@@ -122,33 +128,36 @@ const BlogPage: React.FC = () => {
 
             {/* Filters */}
             {activeCategories.length > 0 && (
-              <div
-                ref={scrollRef}
-                className="flex items-center gap-1 overflow-x-auto scrollbar-hide"
-              >
-                <button
-                  onClick={() => setActiveFilter('all')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-300 whitespace-nowrap shrink-0 ${
-                    activeFilter === 'all'
-                      ? 'bg-accent/10 text-accent shadow-sm shadow-accent/5'
-                      : 'text-silver hover:text-pearl hover:bg-line/[0.04]'
-                  }`}
+              <div className="relative flex-1 min-w-0">
+                <div
+                  ref={scrollRef}
+                  className="flex items-center gap-1 overflow-x-auto scrollbar-hide"
                 >
-                  All
-                </button>
-                {activeCategories.map((category) => (
                   <button
-                    key={category}
-                    onClick={() => setActiveFilter(category)}
+                    onClick={() => setActiveFilter('all')}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-300 whitespace-nowrap shrink-0 ${
-                      activeFilter === category
+                      activeFilter === 'all'
                         ? 'bg-accent/10 text-accent shadow-sm shadow-accent/5'
                         : 'text-silver hover:text-pearl hover:bg-line/[0.04]'
                     }`}
                   >
-                    {category}
+                    All
                   </button>
-                ))}
+                  {activeCategories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setActiveFilter(category)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-300 whitespace-nowrap shrink-0 ${
+                        activeFilter === category
+                          ? 'bg-accent/10 text-accent shadow-sm shadow-accent/5'
+                          : 'text-silver hover:text-pearl hover:bg-line/[0.04]'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+                <div className="absolute top-0 right-0 bottom-0 w-6 bg-gradient-to-l from-steel/[0.35] to-transparent pointer-events-none sm:hidden" />
               </div>
             )}
 
