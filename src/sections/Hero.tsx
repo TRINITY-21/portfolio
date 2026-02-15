@@ -12,17 +12,15 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-grid animate-grid-fade" />
+      {/* Subtle background grid */}
+      <div className="absolute inset-0 bg-grid" />
 
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent/[0.08] rounded-full blur-[120px] animate-glow-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/[0.05] rounded-full blur-[100px] animate-glow-pulse" />
+      {/* Single soft accent glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.03] rounded-full blur-[150px]" />
 
-      {/* Top gradient fade */}
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-obsidian to-transparent" />
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-obsidian to-transparent" />
+      {/* Edge fades */}
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-obsidian to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-obsidian to-transparent" />
 
       <div className="hero-container text-center relative z-10 py-28 sm:py-0">
         <motion.div
@@ -53,7 +51,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+            <h1 className="text-4xl min-[400px]:text-[2.75rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-balance">
               <span className="text-pearl">Joseph Yaw</span>
               <br />
               <span className="gradient-text-accent">Agyeman</span>
@@ -66,8 +64,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            <p className="font-mono text-accent/80 text-xs sm:text-base tracking-wide">
-              {'<'} Full Stack Developer & AI/ML Engineer {'/>'}
+            <p className="font-mono text-accent/70 text-xs sm:text-sm tracking-widest uppercase">
+              Full Stack Developer & AI/ML Engineer
             </p>
           </motion.div>
 
@@ -76,10 +74,10 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.8 }}
-            className="text-silver text-base sm:text-lg content-constraint leading-relaxed max-w-2xl mx-auto"
+            className="text-silver text-base sm:text-lg content-constraint leading-relaxed max-w-2xl mx-auto text-balance"
           >
-            Building intelligent applications with clean architecture, modern frameworks,
-            and cutting-edge AI/ML technologies. Turning complex problems into elegant solutions.
+            Crafting scalable systems with Django, React, and cloud-native infrastructure.
+            From distributed workflows to AI-powered applications — I build what matters.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -117,14 +115,15 @@ const Hero: React.FC = () => {
             transition={{ delay: 1.3, duration: 0.8 }}
             className="flex justify-center pt-12 sm:pt-16"
           >
-            <div className="inline-flex items-center divide-x divide-white/[0.06] px-3 sm:px-10 py-5 rounded-2xl
-                            bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm">
+            <div className="inline-flex items-center divide-x divide-line/[0.06]
+                            px-6 sm:px-10 py-5 rounded-2xl
+                            bg-line/[0.03] border border-line/[0.06] backdrop-blur-sm">
               {[
                 { number: '5+', label: 'Years' },
-                { number: '50+', label: 'Projects' },
-                { number: '100%', label: 'Satisfaction' }
+                { number: '13+', label: 'Projects' },
+                { number: '5+', label: 'Vibe Coded' },
               ].map((stat, index) => (
-                <div key={index} className="text-center px-4 sm:px-8">
+                <div key={index} className="text-center px-2 sm:px-8">
                   <div className="text-xl sm:text-3xl font-bold text-pearl tracking-tight">{stat.number}</div>
                   <div className="text-silver/60 text-xs sm:text-sm font-medium mt-1">{stat.label}</div>
                 </div>
@@ -144,8 +143,8 @@ const Hero: React.FC = () => {
         <motion.button
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-10 h-10 rounded-full border border-white/[0.06] flex items-center justify-center
-                     text-silver hover:text-accent hover:border-accent/30 transition-all duration-300"
+          className="w-10 h-10 rounded-full border border-line/[0.06] flex items-center justify-center
+                     text-silver/40 hover:text-silver hover:border-line/[0.1] transition-all duration-300"
           onClick={() => scrollToSection('about')}
         >
           <ArrowDown size={16} />

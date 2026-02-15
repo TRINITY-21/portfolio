@@ -6,69 +6,63 @@ const VibeCoded: React.FC = () => {
   const vibeProjects = [
     {
       id: 1,
-      title: "AI-Powered SaaS Dashboard",
-      description: "A full analytics dashboard with real-time charts, user management, and AI-driven insights. Built entirely through prompting and vibe coding with AI agents.",
-      liveUrl: "#",
-      githubUrl: "#",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+      title: "Bynge",
+      description: "A Netflix-style movie and TV discovery platform with show browsing, watchlist, collections, scheduling, ratings, and detailed media pages with trailers and cast info.",
+      image: "/projects/bynge.webp",
+      liveUrl: "https://cinescope-nine-pink.vercel.app/",
+      githubUrl: "https://github.com/TRINITY-21/cinescope",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "TMDB API"],
       aiTools: ["Claude", "Cursor"],
       status: "live",
-      vibeTime: "2 days",
+      vibeTime: "5 hours",
     },
     {
       id: 2,
-      title: "E-Commerce Storefront",
-      description: "Modern e-commerce platform with product catalog, cart functionality, Stripe payments, and order tracking. Vibe coded from concept to deployment.",
-      liveUrl: "#",
-      githubUrl: "#",
-      techStack: ["React", "Node.js", "Stripe", "MongoDB", "Tailwind CSS"],
-      aiTools: ["Claude", "V0"],
+      title: "Ovalve",
+      description: "A live sports streaming platform with real-time match feeds, schedules, highlights library, expert predictions, league browsing, and dark mode. Search teams, leagues, and matches instantly.",
+      image: "/projects/ovalve.webp",
+      liveUrl: "https://ovalve-zhqp.vercel.app/",
+      githubUrl: "https://github.com/TRINITY-21/ovalve",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Sports API"],
+      aiTools: ["Claude", "Cursor"],
       status: "live",
-      vibeTime: "3 days",
+      vibeTime: "3 hours",
     },
     {
       id: 3,
-      title: "Real-time Chat Platform",
-      description: "WebSocket-based chat app with rooms, direct messaging, file sharing, and AI-powered message suggestions. Built through conversational AI coding.",
-      liveUrl: "#",
-      githubUrl: "#",
-      techStack: ["React", "Socket.io", "Express", "Redis", "TypeScript"],
-      aiTools: ["Claude", "GitHub Copilot"],
+      title: "Echoweb",
+      description: "An interactive music discovery platform that maps related Spotify artists through a dreamy, visual interface. Explore artist connections and find new music through an immersive experience.",
+      image: "/projects/echoweb.webp",
+      liveUrl: "https://echoweb-mu.vercel.app/",
+      githubUrl: "https://github.com/TRINITY-21/echoweb",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Spotify API"],
+      aiTools: ["Claude", "Cursor"],
       status: "live",
-      vibeTime: "1 day",
+      vibeTime: "2 hours",
     },
     {
       id: 4,
-      title: "Portfolio Generator",
-      description: "A tool that generates stunning developer portfolios from a GitHub profile. Users input their username and get a fully customizable portfolio site.",
-      liveUrl: "#",
-      githubUrl: "#",
-      techStack: ["Next.js", "GitHub API", "Tailwind CSS", "Framer Motion"],
-      aiTools: ["Claude"],
-      status: "beta",
-      vibeTime: "1 day",
+      title: "Three Two Live",
+      description: "A multi-sport streaming hub aggregating live streams, highlights, predictions, scores, and news across NFL, basketball, hockey, and tennis from official sources.",
+      image: "/projects/threetwo.webp",
+      liveUrl: "https://threetwo.vercel.app/",
+      githubUrl: "https://github.com/TRINITY-21/Cline/tree/main",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Sports API"],
+      aiTools: ["Claude", "Cline"],
+      status: "live",
+      vibeTime: "3.5 hours",
     },
     {
       id: 5,
-      title: "AI Study Companion",
-      description: "An intelligent study platform that generates flashcards, quizzes, and summaries from uploaded documents using LLMs. Features spaced repetition learning.",
-      liveUrl: "#",
-      githubUrl: "#",
-      techStack: ["React", "Python", "FastAPI", "OpenAI", "Pinecone"],
+      title: "Portfolio Website",
+      description: "A modern developer portfolio with smooth animations, dark theme, active nav highlighting, project showcases with live screenshots, and a contact form — all vibe coded with AI agents.",
+      image: "/projects/portfolio.webp",
+      liveUrl: "https://josephdev-sigma.vercel.app/",
+      githubUrl: "https://github.com/TRINITY-21/portfolio/tree/main",
+      techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
       aiTools: ["Claude", "Cursor"],
       status: "live",
-      vibeTime: "4 days",
-    },
-    {
-      id: 6,
-      title: "DevOps Monitoring Dashboard",
-      description: "Infrastructure monitoring tool with real-time metrics, alerting, and incident management. Visualizes server health, deployments, and CI/CD pipelines.",
-      liveUrl: "#",
-      githubUrl: "#",
-      techStack: ["Next.js", "D3.js", "WebSocket", "Docker", "TypeScript"],
-      aiTools: ["Claude", "Windsurf"],
-      status: "development",
-      vibeTime: "2 days",
+      vibeTime: "1 hour",
     },
   ]
 
@@ -81,19 +75,15 @@ const VibeCoded: React.FC = () => {
       case 'development':
         return { label: 'In Dev', dotColor: 'bg-accent', textColor: 'text-accent', borderColor: 'border-accent/20', bgColor: 'bg-accent/[0.06]' }
       default:
-        return { label: status, dotColor: 'bg-silver', textColor: 'text-silver', borderColor: 'border-white/10', bgColor: 'bg-white/[0.03]' }
+        return { label: status, dotColor: 'bg-silver', textColor: 'text-silver', borderColor: 'border-line/10', bgColor: 'bg-line/[0.03]' }
     }
   }
 
   return (
-    <section id="vibe-coded" className="section-padding relative overflow-hidden">
+    <section id="vibe-coded" className="section-padding scroll-mt-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-
-      {/* Accent glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/[0.03] rounded-full blur-[150px]" />
-      <div className="absolute bottom-1/4 right-0 w-[300px] h-[300px] bg-accent/[0.04] rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-grid" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-line/[0.06] to-transparent" />
 
       <div className="container-max relative z-10">
         {/* Header */}
@@ -102,17 +92,9 @@ const VibeCoded: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 sm:mb-20"
+          className="mb-12 sm:mb-16"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <span className="section-label mb-0">// vibe-coded</span>
-            <motion.div
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Sparkles className="w-4 h-4 text-accent/80" />
-            </motion.div>
-          </div>
+          <span className="section-label">// vibe-coded</span>
 
           <h2 className="section-heading">
             Built with AI Agents
@@ -156,94 +138,116 @@ const VibeCoded: React.FC = () => {
                 transition={{ duration: 0.3, delay: index * 0.08 }}
                 className="group"
               >
-                <div className="glass-card overflow-hidden h-full flex flex-col">
-                  {/* Card Header - Terminal style */}
-                  <div className="px-4 sm:px-6 pt-5 sm:pt-6 pb-4 border-b border-white/[0.04]">
-                    <div className="flex items-center justify-between mb-4">
-                      {/* Terminal dots */}
+                <div className="glass-card overflow-hidden h-full flex flex-col transition-all duration-300">
+                  {/* Terminal Top Bar */}
+                  <div className="px-4 pt-4 pb-3 flex items-center justify-between">
+                    {/* Terminal dots + URL bar */}
+                    <div className="flex items-center gap-3">
                       <div className="flex items-center gap-1.5">
                         <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
                         <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
                         <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
                       </div>
-
-                      {/* Status badge */}
-                      <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md ${statusConfig.bgColor} ${statusConfig.borderColor} border`}>
-                        <div className={`w-1.5 h-1.5 rounded-full ${statusConfig.dotColor}`} />
-                        <span className={`text-xs font-mono font-medium ${statusConfig.textColor}`}>
-                          {statusConfig.label}
+                      <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-md bg-line/[0.03] border border-line/[0.06]">
+                        <div className="w-2.5 h-2.5 rounded-full border border-emerald-500/50 flex items-center justify-center">
+                          <div className="w-1 h-1 rounded-full bg-emerald-400/70" />
+                        </div>
+                        <span className="text-silver/40 text-[10px] font-mono truncate max-w-[120px]">
+                          {project.liveUrl?.replace('https://', '').replace(/\/$/, '')}
                         </span>
                       </div>
                     </div>
 
-                    <h3 className="text-pearl font-semibold text-lg mb-1.5 group-hover:text-accent transition-colors duration-300">
-                      {project.title}
-                    </h3>
-
-                    {/* Vibe time */}
-                    <div className="flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3 text-accent/70" />
-                      <span className="text-accent/60 text-xs font-mono">
-                        vibe coded in {project.vibeTime}
+                    {/* Status badge */}
+                    <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md ${statusConfig.bgColor} ${statusConfig.borderColor} border`}>
+                      <div className={`w-1.5 h-1.5 rounded-full ${statusConfig.dotColor}`} />
+                      <span className={`text-xs font-mono font-medium ${statusConfig.textColor}`}>
+                        {statusConfig.label}
                       </span>
                     </div>
                   </div>
 
+                  {/* Screen Preview */}
+                  <div className="px-3 pb-3">
+                    <div className="relative rounded-lg overflow-hidden border border-line/[0.06]
+                                    group-hover:border-line/[0.1] transition-all duration-500">
+                      <div className="relative h-40 sm:h-44 overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          loading="lazy"
+                          onLoad={(e) => e.currentTarget.classList.add('opacity-100')}
+                          className="w-full h-full object-cover object-top transition-all duration-700 opacity-0 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/40" />
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Card Body */}
-                  <div className="px-4 sm:px-6 py-4 sm:py-5 flex flex-col flex-1">
-                    <p className="text-silver text-sm leading-relaxed mb-4 flex-1">
+                  <div className="px-4 pb-4 sm:pb-5 flex flex-col flex-1">
+                    {/* Title + Vibe Time */}
+                    <h3 className="text-pearl font-semibold text-lg mb-1.5 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <div className="flex items-center gap-1.5 mb-3">
+                      <Sparkles className="w-3 h-3 text-accent/60" />
+                      <span className="text-accent/50 text-[11px] font-mono">
+                        Vibe coded in {project.vibeTime}
+                      </span>
+                    </div>
+
+                    <p className="text-silver text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
                       {project.description}
                     </p>
 
-                    {/* AI Tools Used */}
-                    <div className="mb-3">
-                      <span className="text-xs font-mono text-silver/40 uppercase tracking-wider">AI Tools</span>
-                      <div className="flex flex-wrap gap-1.5 mt-1.5">
-                        {project.aiTools.map((tool, i) => (
-                          <span
-                            key={i}
-                            className="px-2.5 py-0.5 text-xs font-mono font-medium rounded-md
-                                       bg-accent/[0.08] text-accent/70 border border-accent/15
-                                       hover:border-accent/30 transition-colors duration-300"
-                          >
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Tech Stack */}
-                    <div className="mb-4">
-                      <span className="text-xs font-mono text-silver/40 uppercase tracking-wider">Stack</span>
-                      <div className="flex flex-wrap gap-1.5 mt-1.5">
-                        {project.techStack.map((tech, i) => (
-                          <span key={i} className="tech-tag text-xs px-2.5 py-0.5">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                    {/* AI Tools + Tech Stack inline */}
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {project.aiTools.map((tool, i) => (
+                        <span
+                          key={`ai-${i}`}
+                          className="px-2 py-0.5 text-[11px] font-mono font-medium rounded-md
+                                     bg-accent/[0.08] text-accent/70 border border-accent/15"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                      <span className="text-line/10 text-xs flex items-center">|</span>
+                      {project.techStack.map((tech, i) => (
+                        <span key={`tech-${i}`} className="tech-tag text-[11px] px-2 py-0.5">
+                          {tech}
+                        </span>
+                      ))}
                     </div>
 
                     {/* Action Links */}
-                    <div className="flex gap-2 pt-2 border-t border-white/[0.04]">
-                      <a
-                        href={project.liveUrl}
-                        className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium
-                                   bg-accent/[0.06] text-accent border border-accent/10
-                                   hover:bg-accent/10 hover:border-accent/20 transition-all duration-300"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        Live Demo
-                      </a>
-                      <a
-                        href={project.githubUrl}
-                        className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium
-                                   bg-white/[0.03] text-silver border border-white/[0.06]
-                                   hover:text-pearl hover:border-white/10 transition-all duration-300"
-                      >
-                        <Github className="w-3.5 h-3.5" />
-                        Source
-                      </a>
+                    <div className="flex gap-2 pt-3 border-t border-line/[0.04]">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium
+                                     bg-accent/[0.06] text-accent border border-accent/10
+                                     hover:bg-accent/10 hover:border-accent/20 transition-all duration-300"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          Live Demo
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium
+                                     bg-line/[0.03] text-silver border border-line/[0.06]
+                                     hover:text-pearl hover:border-line/10 transition-all duration-300"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          Source
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

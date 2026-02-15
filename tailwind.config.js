@@ -9,11 +9,13 @@ export default {
       colors: {
         'charcoal': '#111111',
         'slate': '#1a1a1a',
-        'steel': '#2a2a2a',
-        'silver': '#737373',
         'platinum': '#e0e0e0',
-        'pearl': '#fafafa',
-        'obsidian': '#09090b',
+        // Theme-aware colors via CSS variables
+        'obsidian': 'rgb(var(--color-bg-primary) / <alpha-value>)',
+        'steel': 'rgb(var(--color-bg-secondary) / <alpha-value>)',
+        'pearl': 'rgb(var(--color-text-primary) / <alpha-value>)',
+        'silver': 'rgb(var(--color-text-secondary) / <alpha-value>)',
+        'line': 'rgb(var(--color-border) / <alpha-value>)',
         'accent': {
           DEFAULT: '#06b6d4',
           50: '#ecfeff',
@@ -37,8 +39,6 @@ export default {
         'slide-up': 'slideUp 0.8s ease-out',
         'slide-down': 'slideDown 0.8s ease-out',
         'scale-in': 'scaleIn 0.5s ease-out',
-        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
-        'grid-fade': 'gridFade 4s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -57,17 +57,9 @@ export default {
           '0%': { transform: 'scale(0.9)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
-        glowPulse: {
-          '0%, 100%': { opacity: '0.4' },
-          '50%': { opacity: '0.8' },
-        },
-        gridFade: {
-          '0%, 100%': { opacity: '0.15' },
-          '50%': { opacity: '0.25' },
-        },
       },
       backgroundImage: {
-        'grid-pattern': 'linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px)',
+        'grid-pattern': 'linear-gradient(var(--grid-line-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px)',
         'dot-pattern': 'radial-gradient(circle, rgba(6, 182, 212, 0.08) 1px, transparent 1px)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
@@ -76,11 +68,11 @@ export default {
         'dot': '24px 24px',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(6, 182, 212, 0.15)',
-        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.2)',
-        'glow-xl': '0 0 60px rgba(6, 182, 212, 0.25)',
-        'card': '0 1px 3px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.2)',
-        'card-hover': '0 4px 12px rgba(0,0,0,0.4), 0 16px 48px rgba(0,0,0,0.3), 0 0 24px rgba(6, 182, 212, 0.08)',
+        'glow': 'var(--shadow-glow)',
+        'glow-lg': 'var(--shadow-glow-lg)',
+        'glow-xl': '0 0 40px rgba(6, 182, 212, 0.15)',
+        'card': 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
       },
     },
   },

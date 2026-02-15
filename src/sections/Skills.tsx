@@ -42,11 +42,10 @@ const Skills: React.FC = () => {
   ]
 
   return (
-    <section id="skills" className="section-padding relative overflow-hidden">
+    <section id="skills" className="section-padding scroll-mt-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-grid" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-line/[0.06] to-transparent" />
 
       <div className="container-max relative z-10">
         {/* Header */}
@@ -55,7 +54,7 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 sm:mb-20"
+          className="mb-12 sm:mb-16"
         >
           <span className="section-label">// skills</span>
           <h2 className="section-heading">Tech Stack</h2>
@@ -70,10 +69,10 @@ const Skills: React.FC = () => {
           {skillGroups.map((group, groupIndex) => (
             <motion.div
               key={groupIndex}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: groupIndex * 0.08 }}
+              transition={{ duration: 0.4, delay: groupIndex * 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="glass-card p-4 sm:p-5"
             >
               <h3 className="text-xs font-mono text-accent/70 uppercase tracking-widest mb-3">

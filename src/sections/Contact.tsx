@@ -83,11 +83,10 @@ const Contact: React.FC = () => {
   ]
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
+    <section id="contact" className="section-padding scroll-mt-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-      <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-grid" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-line/[0.06] to-transparent" />
 
       <div className="container-max relative z-10">
         {/* Header */}
@@ -96,7 +95,7 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 sm:mb-20"
+          className="mb-12 sm:mb-16"
         >
           <span className="section-label">// contact</span>
           <h2 className="section-heading">Get In Touch</h2>
@@ -156,9 +155,9 @@ const Contact: React.FC = () => {
                   href="https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06]
+                  className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
                              flex items-center justify-center text-silver hover:text-accent
-                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-110 transition-all duration-300"
+                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -166,9 +165,9 @@ const Contact: React.FC = () => {
                   href="https://github.com/TRINITY-21"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06]
+                  className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
                              flex items-center justify-center text-silver hover:text-accent
-                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-110 transition-all duration-300"
+                             hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
                 >
                   <Github className="w-4 h-4" />
                 </a>

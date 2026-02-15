@@ -2,7 +2,22 @@
   "permissions": {
     "allow": [
       "Bash(npm run build:*)",
-      "Bash(timeout 5 npx vite:*)"
+      "Bash(timeout 5 npx vite:*)",
+      "WebFetch(domain:www.spiika.com)",
+      "Bash(npx tsc:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:www.famconnections.com)",
+      "WebFetch(domain:artistdesk.com)",
+      "WebFetch(domain:kngtechnologies.com)",
+      "WebFetch(domain:www.momsandmidwives.com)",
+      "WebFetch(domain:josephdev-sigma.vercel.app)",
+      "WebFetch(domain:cryptospace.com)",
+      "WebFetch(domain:cinescope-nine-pink.vercel.app)",
+      "WebFetch(domain:ovalve-zhqp.vercel.app)",
+      "WebFetch(domain:echoweb-mu.vercel.app)",
+      "WebFetch(domain:threetwo.vercel.app)",
+      "WebFetch(domain:afcfta.blog)",
+      "Bash(npx vite build:*)"
     ]
   }
 }

@@ -27,11 +27,10 @@ const About: React.FC = () => {
   ]
 
   return (
-    <section id="about" className="section-padding relative overflow-hidden">
+    <section id="about" className="section-padding scroll-mt-20 relative overflow-hidden">
       {/* Subtle background */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-[120px]" />
+      <div className="absolute inset-0 bg-grid" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-line/[0.06] to-transparent" />
 
       <div className="container-max relative z-10">
         {/* Section Header */}
@@ -40,7 +39,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 sm:mb-20"
+          className="mb-12 sm:mb-16"
         >
           <span className="section-label">// about</span>
           <h2 className="section-heading">
@@ -59,7 +58,7 @@ const About: React.FC = () => {
             className="lg:col-span-2"
           >
             <div className="relative max-w-sm mx-auto lg:mx-0">
-              {/* Animated corner brackets — top-left */}
+              {/* Corner brackets — top-left */}
               <div className="absolute -top-3 -left-3 w-10 h-10 z-20">
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent to-transparent" />
                 <div className="absolute top-0 left-0 h-full w-[2px] bg-gradient-to-b from-accent to-transparent" />
@@ -87,8 +86,8 @@ const About: React.FC = () => {
               <div className="absolute -inset-2 rounded-2xl border border-dashed border-accent/[0.12] -z-10" />
 
               {/* Image container */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] shadow-card group
-                            hover:border-accent/20 hover:shadow-glow transition-all duration-500">
+              <div className="relative rounded-2xl overflow-hidden border border-line/[0.06] shadow-card group
+                            hover:border-line/[0.1] transition-all duration-500">
                 <img
                   src="/me.jpeg"
                   alt="Joseph Yaw Agyeman"
@@ -96,14 +95,12 @@ const About: React.FC = () => {
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-obsidian/20 to-transparent" />
-                {/* Cyan tint overlay */}
-                <div className="absolute inset-0 bg-accent/[0.04] mix-blend-overlay" />
 
                 {/* Scanline effect */}
                 <div
-                  className="absolute inset-0 opacity-[0.08] pointer-events-none"
+                  className="absolute inset-0 opacity-[0.06] pointer-events-none"
                   style={{
-                    backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6,182,212,0.15) 2px, rgba(6,182,212,0.15) 4px)',
+                    backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6,182,212,0.12) 2px, rgba(6,182,212,0.12) 4px)',
                   }}
                 />
 
@@ -129,21 +126,21 @@ const About: React.FC = () => {
           >
             {/* Bio */}
             <div className="space-y-5">
-              <p className="text-silver text-base leading-[1.8]">
-                I'm a <span className="text-pearl">Full Stack Developer and AI/ML Engineer</span> with over
+              <p className="text-silver text-base leading-relaxed sm:leading-[1.8]">
+                I'm a <span className="text-pearl font-medium">Full Stack Developer and AI/ML Engineer</span> with over
                 5 years of experience shipping production software across B2B platforms, fintech, and
-                cybersecurity. My core stack is <span className="text-accent">Django</span>, <span className="text-accent">React/Next.js</span>,
+                cybersecurity. My core stack is <span className="text-pearl">Django</span>, <span className="text-pearl">React/Next.js</span>,
                 and TypeScript, backed by PostgreSQL, Redis, and Elasticsearch — deployed
-                on <span className="text-accent">AWS</span> with Docker, Kubernetes, and CI/CD pipelines I architect myself.
-                At <span className="text-pearl">KNG Technologies</span>, I lead the development of distributed
+                on <span className="text-pearl">AWS</span> with Docker, Kubernetes, and CI/CD pipelines I architect myself.
+                At <span className="text-pearl font-medium">KNG Technologies</span>, I lead the development of distributed
                 workflow services, Kafka data pipelines, and DevOps infrastructure.
               </p>
 
-              <p className="text-silver text-base leading-[1.8]">
+              <p className="text-silver text-base leading-relaxed sm:leading-[1.8]">
                 What sets me apart is my ability to pair deep engineering fundamentals with
-                cutting-edge <span className="text-accent">AI/ML</span> — from training models with TensorFlow
+                cutting-edge <span className="text-pearl">AI/ML</span> — from training models with TensorFlow
                 and PyTorch to leveraging LLMs for automation. I'm also an early adopter
-                of <span className="text-pearl">AI-assisted development</span>, using tools like Claude and
+                of <span className="text-pearl font-medium">AI-assisted development</span>, using tools like Claude and
                 Cursor to ship full applications in days. Based in Turkey, open to remote roles worldwide,
                 and I thrive in fast-moving teams where I can own problems end-to-end.
               </p>

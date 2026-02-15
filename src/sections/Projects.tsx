@@ -4,67 +4,97 @@ import React, { useState } from 'react'
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [showAll, setShowAll] = useState(false)
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, shopping cart, and payment processing.",
+      title: "Spiika",
+      description: "An African language learning platform offering interactive courses in Yoruba, Swahili, Twi, Ewe, Hausa, and French. Features organized curricula with categorized lessons and a clean learning interface.",
       category: "fullstack",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true
+      image: "/projects/spiika.webp",
+      technologies: ["Next.js", "React", "Firebase", "Firestore", "TypeScript"],
+      liveUrl: "https://www.spiika.com/",
+      githubUrl: null,
+
     },
     {
       id: 2,
-      title: "AI Chat Application",
-      description: "Real-time chat application powered by OpenAI's GPT API. Built with React, Socket.io, and Express. Features include conversation history, user authentication, and responsive design.",
+      title: "FamConnections",
+      description: "A family networking platform to build family trees, share memories, organize reunions, and stay connected in a private, secure space. Features a media hub and Google Maps integration.",
       category: "fullstack",
-      technologies: ["React", "Express", "Socket.io", "OpenAI API", "JWT"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: true
+      image: "/projects/famconnections.webp",
+      technologies: ["Next.js", "React", "Django", "PrimeReact", "Google Maps API"],
+      liveUrl: "https://www.famconnections.com/",
+      githubUrl: null,
+
+    },
+    {
+      id: 7,
+      title: "AfCFTA",
+      description: "An initiative of the AfCFTA Secretariat — a blogging and debate platform for discussing and shaping the African Continental Free Trade Area. Features debates, events, articles, and trending discussions.",
+      category: "backend",
+      image: "/projects/afcfta.webp",
+      technologies: ["Vue.js", "Django", "PostgreSQL", "REST API", "Docker"],
+      liveUrl: "https://afcfta.blog/",
+      githubUrl: null,
+
     },
     {
       id: 3,
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio website built with React and TypeScript. Features smooth animations, dark mode, and optimized performance.",
-      category: "frontend",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
+      title: "Artist Desk",
+      description: "A project management platform built for musicians and artists. Organize tasks, projects, music, file sharing, and collaboration — all in one system designed for the creative workflow.",
+      category: "fullstack",
+      image: "/projects/artistdesk.webp",
+      technologies: ["Next.js", "React", "Firebase", "Firestore", "TypeScript"],
+      liveUrl: "https://artistdesk.com",
+      githubUrl: null,
+
     },
     {
       id: 4,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      category: "fullstack",
-      technologies: ["React", "Node.js", "PostgreSQL", "Socket.io", "Docker"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
+      title: "KNG Technologies",
+      description: "Corporate website for a Ghana-based software development company. A clean, modern landing page showcasing services, portfolio, and team — with a focus on outsourced development and Flutter expertise.",
+      category: "frontend",
+      image: "/projects/kngtechnologies.webp",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      liveUrl: "https://kngtechnologies.com/",
+      githubUrl: null,
+
     },
     {
       id: 5,
-      title: "Weather Dashboard",
-      description: "Beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      category: "frontend",
-      technologies: ["React", "OpenWeather API", "Chart.js", "Leaflet Maps"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
+      title: "Moms & Midwives",
+      description: "A maternal health platform connecting pregnant women and new mothers with certified midwives and doctors. Features private chats, community forums, contraction tracking, and video consultations.",
+      category: "fullstack",
+      image: "/projects/momsandmidwives.webp",
+      technologies: ["Django", "Wagtail CMS", "React", "PostgreSQL", "REST API"],
+      liveUrl: "https://www.momsandmidwives.com/",
+      githubUrl: null,
+
     },
     {
       id: 6,
-      title: "API Gateway Service",
-      description: "Microservices API gateway built with Node.js and Express. Features include rate limiting, authentication, logging, and load balancing.",
+      title: "Portfolio Website",
+      description: "A modern, responsive developer portfolio with smooth animations, dark theme, active nav highlighting, and optimized performance. Features project showcases, skills, and contact sections.",
+      category: "frontend",
+      image: "/projects/portfolio.webp",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
+      liveUrl: "https://josephdev-sigma.vercel.app/",
+      githubUrl: "https://github.com/TRINITY-21/portfolio",
+
+    },
+
+    {
+      id: 8,
+      title: "Cryptospace Network",
+      description: "A multi-service cryptocurrency platform featuring crypto card services, buy/sell with Visa/Mastercard, SaaS solutions, NFT marketplace, and media — all in one blockchain ecosystem.",
       category: "backend",
-      technologies: ["Node.js", "Express", "Redis", "JWT", "Docker"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false
+      image: "/projects/cryptospace.webp",
+      technologies: ["React", "Django", "PostgreSQL", "REST API", "TypeScript"],
+      liveUrl: "https://cryptospace.com/",
+      githubUrl: null,
+
     }
   ]
 
@@ -79,12 +109,13 @@ const Projects: React.FC = () => {
     ? projects
     : projects.filter(project => project.category === activeFilter)
 
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6)
+
   return (
-    <section id="projects" className="section-padding relative overflow-hidden">
+    <section id="projects" className="section-padding scroll-mt-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-      <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-[120px]" />
+      <div className="absolute inset-0 bg-grid" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-line/[0.06] to-transparent" />
 
       <div className="container-max relative z-10">
         {/* Header */}
@@ -93,7 +124,7 @@ const Projects: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 sm:mb-20"
+          className="mb-12 sm:mb-16"
         >
           <span className="section-label">// projects</span>
           <h2 className="section-heading">Featured Projects</h2>
@@ -117,10 +148,10 @@ const Projects: React.FC = () => {
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
               className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium tracking-wide
-                         transition-all duration-300 ${
+                         transition-all duration-200 ${
                 activeFilter === filter.id
-                  ? 'bg-accent text-obsidian shadow-glow'
-                  : 'bg-white/[0.03] text-silver border border-white/[0.06] hover:bg-white/[0.06] hover:border-accent/20 hover:text-pearl'
+                  ? 'bg-accent text-obsidian'
+                  : 'bg-line/[0.03] text-silver border border-line/[0.06] hover:bg-line/[0.06] hover:border-line/[0.1] hover:text-pearl'
               }`}
             >
               {filter.icon}
@@ -130,69 +161,51 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence mode="wait">
-            {filteredProjects.map((project, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatePresence>
+            {visibleProjects.map((project) => (
               <motion.div
                 key={project.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
                 className="group"
               >
-                <div className="glass-card overflow-hidden h-full flex flex-col">
+                <div className="glass-card overflow-hidden h-full flex flex-col transition-all duration-300">
                   {/* Project Image Area */}
-                  <div className="relative h-44 bg-gradient-to-br from-steel/30 via-obsidian to-steel/20 overflow-hidden">
-                    <div className="absolute inset-0 bg-grid opacity-20" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Code className="w-10 h-10 text-accent/30" />
-                    </div>
-
-                    {/* Featured Badge */}
-                    {project.featured && (
-                      <div className="absolute top-3 right-3 px-2.5 py-1 bg-accent/10 backdrop-blur-sm
-                                     text-accent text-xs font-mono font-semibold rounded-md border border-accent/20">
-                        FEATURED
-                      </div>
+                  <div className="relative h-44 bg-steel/20 overflow-hidden">
+                    {'image' in project && project.image ? (
+                      <>
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          loading="lazy"
+                          onLoad={(e) => e.currentTarget.classList.add('opacity-100')}
+                          className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 opacity-0 group-hover:scale-[1.03]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/40" />
+                      </>
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-grid" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Code className="w-10 h-10 text-silver/20" />
+                        </div>
+                      </>
                     )}
 
                     {/* Category */}
-                    <div className="absolute top-3 left-3 px-2.5 py-1 bg-obsidian/60 backdrop-blur-sm
-                                   text-silver text-xs font-mono rounded-md border border-white/[0.06]">
+                    <div className="absolute top-3 right-3 px-2.5 py-1 bg-obsidian/80 backdrop-blur-md
+                                   text-silver text-xs font-mono font-medium rounded-md border border-line/[0.08]">
                       {project.category}
                     </div>
 
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-obsidian/80 backdrop-blur-sm opacity-0 group-hover:opacity-100
-                                   transition-all duration-300 flex items-center justify-center gap-3">
-                      <motion.a
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        href={project.liveUrl}
-                        className="p-2.5 bg-accent text-obsidian rounded-lg hover:bg-accent-400 transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </motion.a>
-                      <motion.a
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        href={project.githubUrl}
-                        className="p-2.5 bg-white/10 text-pearl rounded-lg border border-white/[0.06]
-                                   hover:bg-white/20 transition-colors"
-                      >
-                        <Github className="w-4 h-4" />
-                      </motion.a>
-                    </div>
                   </div>
 
                   {/* Content */}
                   <div className="p-4 sm:p-6 flex flex-col flex-1">
-                    <h3 className="text-pearl font-semibold text-lg mb-2 group-hover:text-accent transition-colors duration-300">
+                    <h3 className="text-pearl font-semibold text-lg mb-2 transition-colors duration-300">
                       {project.title}
                     </h3>
 
@@ -201,36 +214,74 @@ const Projects: React.FC = () => {
                     </p>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 mb-4">
                       {project.technologies.map((tech, techIndex) => (
                         <span key={techIndex} className="tech-tag text-xs px-2.5 py-0.5">
                           {tech}
                         </span>
                       ))}
                     </div>
+
+                    {/* Action Links */}
+                    <div className="flex gap-2 pt-3 border-t border-line/[0.04]">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium
+                                     bg-accent/[0.06] text-accent border border-accent/10
+                                     hover:bg-accent/10 hover:border-accent/20 transition-all duration-300"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          Live Demo
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium
+                                     bg-line/[0.03] text-silver border border-line/[0.06]
+                                     hover:text-pearl hover:border-line/10 transition-all duration-300"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          Source
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* View More */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="btn-outline px-8"
+        {filteredProjects.length > 6 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            className="text-center mt-12"
           >
-            View All Projects
-          </motion.button>
-        </motion.div>
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => {
+                if (showAll) {
+                  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+                }
+                setShowAll(!showAll)
+              }}
+              className="btn-outline px-8"
+            >
+              {showAll ? 'Show Less' : 'View All Projects'}
+            </motion.button>
+          </motion.div>
+        )}
       </div>
     </section>
   )

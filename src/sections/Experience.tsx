@@ -6,6 +6,7 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       company: "KNG Technologies",
+      companyUrl: "https://kngtechnologies.com/",
       position: "Full-stack Engineer",
       duration: "Sept 2022 - Present",
       location: "Remote",
@@ -14,7 +15,8 @@ const Experience: React.FC = () => {
       stack: ["Django", "Next.js", "TypeScript", "PostgreSQL", "Kafka", "AWS", "Kubernetes", "Docker"],
     },
     {
-      company: "Cybotcx",
+      company: "Cyboticx",
+      companyUrl: "https://cyboticx.com/",
       position: "Full-stack Engineer",
       duration: "Oct 2021 - June 2023",
       location: "Remote",
@@ -23,7 +25,8 @@ const Experience: React.FC = () => {
       stack: ["Django", "React", "TypeScript", "MySQL", "Redis", "Elasticsearch", "Kubernetes", "CircleCI"],
     },
     {
-      company: "Mpedigree",
+      company: "Credmap",
+      companyUrl: "https://www.credmap.com/",
       position: "Backend Engineer",
       duration: "Sept 2020 - 2022",
       location: "Accra, Ghana",
@@ -34,11 +37,10 @@ const Experience: React.FC = () => {
   ]
 
   return (
-    <section id="experience" className="section-padding relative overflow-hidden">
+    <section id="experience" className="section-padding scroll-mt-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-[100px]" />
+      <div className="absolute inset-0 bg-grid" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-line/[0.06] to-transparent" />
 
       <div className="container-max relative z-10">
         {/* Header */}
@@ -47,7 +49,7 @@ const Experience: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 sm:mb-20"
+          className="mb-12 sm:mb-16"
         >
           <span className="section-label">// experience</span>
           <h2 className="section-heading">Where I've Worked</h2>
@@ -71,7 +73,7 @@ const Experience: React.FC = () => {
                 <div className={`relative flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center ${
                   exp.active
                     ? 'bg-accent/15 border border-accent/30'
-                    : 'bg-white/[0.03] border border-white/[0.06]'
+                    : 'bg-line/[0.03] border border-line/[0.06]'
                 }`}>
                   <GitCommit className={`w-4 h-4 ${exp.active ? 'text-accent' : 'text-silver/40'}`} />
                   {exp.active && (
@@ -81,7 +83,7 @@ const Experience: React.FC = () => {
 
                 <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
                   <span className="font-mono text-[11px] sm:text-xs text-accent/60 tracking-wider whitespace-nowrap">{exp.duration}</span>
-                  <span className="text-white/10">|</span>
+                  <span className="text-line/10">|</span>
                   <span className="font-mono text-[11px] sm:text-xs text-silver/40 truncate">{exp.location}</span>
                 </div>
               </div>
@@ -89,9 +91,9 @@ const Experience: React.FC = () => {
               {/* Vertical connector line */}
               <div className="ml-[15px] pl-5 sm:pl-7 border-l border-dashed border-accent/20 pb-8">
                 {/* Card */}
-                <div className={`glass-card overflow-hidden group ${exp.active ? 'border-accent/15 shadow-glow' : ''}`}>
+                <div className={`glass-card overflow-hidden group hover:border-line/[0.1] ${exp.active ? 'border-accent/15 shadow-glow hover:border-accent/20' : ''}`}>
                   {/* Terminal-style top bar */}
-                  <div className="flex items-center justify-between px-4 sm:px-5 py-2.5 border-b border-white/[0.04] bg-white/[0.01]">
+                  <div className="flex items-center justify-between px-4 sm:px-5 py-2.5 border-b border-line/[0.04] bg-line/[0.01]">
                     <div className="flex items-center gap-1.5">
                       <span className="w-[7px] h-[7px] rounded-full bg-red-500/70" />
                       <span className="w-[7px] h-[7px] rounded-full bg-yellow-500/70" />
@@ -109,7 +111,15 @@ const Experience: React.FC = () => {
                     {/* Role */}
                     <h3 className="text-pearl font-semibold text-base mb-1.5">
                       {exp.position}
-                      <span className="text-accent font-normal"> @ {exp.company}</span>
+                      <span className="text-line/15 font-normal"> | </span>
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent font-normal hover:text-accent/80 transition-colors duration-300"
+                      >
+                        {exp.company}
+                      </a>
                     </h3>
 
                     {/* Summary */}
@@ -139,7 +149,7 @@ const Experience: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex items-center gap-3"
           >
-            <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-white/[0.02] border border-white/[0.04]">
+            <div className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center bg-line/[0.02] border border-line/[0.04]">
               <span className="w-1.5 h-1.5 rounded-full bg-accent/20" />
             </div>
             <p className="text-silver/40 text-xs font-mono">// the journey continues...</p>
