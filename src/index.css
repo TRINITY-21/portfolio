@@ -10,7 +10,7 @@
   --color-bg-primary: 9 9 11;         /* obsidian #09090b */
   --color-bg-secondary: 42 42 42;     /* steel #2a2a2a */
   --color-text-primary: 250 250 250;  /* pearl #fafafa */
-  --color-text-secondary: 115 115 115;/* silver #737373 */
+  --color-text-secondary: 140 140 140;/* silver #8c8c8c */
 
   --color-border: 255 255 255;
   --border-opacity: 0.06;
@@ -26,6 +26,7 @@
   --shadow-glow-lg: 0 0 24px rgba(6,182,212,0.12);
 
   --grid-line-color: rgba(6, 182, 212, 0.02);
+  --scanline-color-subtle: rgba(255, 255, 255, 0.03);
 
   color-scheme: dark;
 }
@@ -250,6 +251,35 @@
   to { opacity: 1; }
 }
 
+/* Code syntax highlighting */
+.prose pre code .token.comment,
+.prose pre code .token.prolog,
+.prose pre code .token.doctype,
+.prose pre code .token.cdata { color: #737373; font-style: italic; }
+.prose pre code .token.punctuation { color: #a3a3a3; }
+.prose pre code .token.property,
+.prose pre code .token.tag,
+.prose pre code .token.boolean,
+.prose pre code .token.number,
+.prose pre code .token.constant,
+.prose pre code .token.symbol { color: #22d3ee; }
+.prose pre code .token.selector,
+.prose pre code .token.attr-name,
+.prose pre code .token.string,
+.prose pre code .token.char,
+.prose pre code .token.builtin { color: #67e8f9; }
+.prose pre code .token.operator,
+.prose pre code .token.entity,
+.prose pre code .token.url { color: #a5f3fc; }
+.prose pre code .token.atrule,
+.prose pre code .token.attr-value,
+.prose pre code .token.keyword { color: #06b6d4; }
+.prose pre code .token.function,
+.prose pre code .token.class-name { color: #e0e0e0; }
+.prose pre code .token.regex,
+.prose pre code .token.important,
+.prose pre code .token.variable { color: #67e8f9; }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -257,5 +287,15 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

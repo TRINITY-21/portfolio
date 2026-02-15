@@ -155,6 +155,7 @@ const Contact: React.FC = () => {
                   href="https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
                              flex items-center justify-center text-silver hover:text-accent
                              hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
@@ -165,6 +166,7 @@ const Contact: React.FC = () => {
                   href="https://github.com/TRINITY-21"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
                              flex items-center justify-center text-silver hover:text-accent
                              hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"

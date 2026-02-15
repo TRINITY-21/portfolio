@@ -143,6 +143,7 @@ const Hero: React.FC = () => {
         <motion.button
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          aria-label="Scroll to about section"
           className="w-10 h-10 rounded-full border border-line/[0.06] flex items-center justify-center
                      text-silver/40 hover:text-silver hover:border-line/[0.1] transition-all duration-300"
           onClick={() => scrollToSection('about')}

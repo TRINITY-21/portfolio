@@ -47,6 +47,7 @@ const Footer: React.FC = () => {
                   href="https://www.linkedin.com/in/joseph-yaw-agyeman-747384241/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
                              flex items-center justify-center text-silver hover:text-accent
                              hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
@@ -57,6 +58,7 @@ const Footer: React.FC = () => {
                   href="https://github.com/TRINITY-21"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="w-10 h-10 rounded-lg bg-line/[0.03] border border-line/[0.06]
                              flex items-center justify-center text-silver hover:text-accent
                              hover:border-accent/20 hover:bg-accent/[0.06] hover:scale-105 transition-all duration-300"
@@ -68,7 +70,7 @@ const Footer: React.FC = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-pearl font-medium text-sm mb-4 tracking-wide">Navigation</h4>
+              <p className="text-pearl font-medium text-sm mb-4 tracking-wide">Navigation</p>
               <ul className="space-y-2.5">
                 {[
                   { label: 'Home', href: '#home' },
@@ -78,6 +80,7 @@ const Footer: React.FC = () => {
                   { label: 'Vibe Coded', href: '#vibe-coded' },
                   { label: 'Experience', href: '#experience' },
                   { label: 'Contact', href: '#contact' },
+                  { label: 'Blog', href: '/blog' },
                 ].map((link) => (
                   <li key={link.label}>
                     <a
@@ -93,7 +96,7 @@ const Footer: React.FC = () => {
 
             {/* Contact */}
             <div>
-              <h4 className="text-pearl font-medium text-sm mb-4 tracking-wide">Contact</h4>
+              <p className="text-pearl font-medium text-sm mb-4 tracking-wide">Contact</p>
               <ul className="space-y-2.5 text-silver text-sm break-all sm:break-normal">
                 <li>agyemanjoseph12@yahoo.com</li>
                 <li>+90 538 243 24 00</li>
@@ -107,10 +110,10 @@ const Footer: React.FC = () => {
 
           {/* Bottom */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-silver/60 text-xs">
+            <p className="text-silver text-xs">
               &copy; {currentYear} Joseph Yaw Agyeman. All rights reserved.
             </p>
-            <p className="text-silver/40 text-xs font-mono">
+            <p className="text-silver text-xs font-mono">
               Built with React + TypeScript
             </p>
           </div>
@@ -128,6 +131,7 @@ const Footer: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToTop}
+            aria-label="Scroll to top"
             className="fixed bottom-6 right-6 w-11 h-11 rounded-xl bg-accent/10 backdrop-blur-md border border-accent/20
                        text-accent flex items-center justify-center z-40
                        hover:bg-accent/20 hover:shadow-glow transition-all duration-300"

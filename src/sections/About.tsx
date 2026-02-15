@@ -163,7 +163,7 @@ const About: React.FC = () => {
                       {feature.icon}
                     </div>
                     <div>
-                      <h4 className="text-pearl font-medium text-sm mb-1">{feature.title}</h4>
+                      <h3 className="text-pearl font-medium text-sm mb-1">{feature.title}</h3>
                       <p className="text-silver text-sm leading-relaxed">{feature.description}</p>
                     </div>
                   </div>

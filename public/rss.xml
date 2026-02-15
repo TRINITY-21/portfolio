@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joseph Yaw Agyeman - Blog</title>
+    <link>https://jagyeman.dev/blog</link>
+    <description>Articles on software engineering, AI/ML, system design, and building production systems.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Feb 2026 16:09:17 GMT</lastBuildDate>
+    <atom:link href="https://jagyeman.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The Rise of AI Agents: Building Autonomous Systems That Actually Work</title>
+      <link>https://jagyeman.dev/blog/the-rise-of-ai-agents</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/the-rise-of-ai-agents</guid>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
+      <description>A deep dive into AI agent architectures — from simple ReAct loops to multi-agent orchestration. Practical patterns for building agents that reason, use tools, and solve real problems.</description>
+      <category>AI</category>
+      <category>Agents</category>
+      <category>LLMs</category>
+      <category>Python</category>
+    </item>
+    <item>
+      <title>AI-Assisted Development: How I Actually Use AI to Write Better Code</title>
+      <link>https://jagyeman.dev/blog/ai-assisted-development-guide</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/ai-assisted-development-guide</guid>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Beyond autocomplete — a honest look at how AI tools fit into a real development workflow. When to lean on them, when to think for yourself, and the prompting patterns that actually work.</description>
+      <category>AI</category>
+      <category>Developer Tools</category>
+      <category>Productivity</category>
+      <category>Software Engineering</category>
+    </item>
+    <item>
+      <title>Building Scalable APIs with Django REST Framework</title>
+      <link>https://jagyeman.dev/blog/building-scalable-apis-with-django</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/building-scalable-apis-with-django</guid>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
+      <description>A practical guide to designing and building production-ready REST APIs with Django REST Framework, covering serializers, viewsets, authentication, and performance optimization.</description>
+      <category>Django</category>
+      <category>Python</category>
+      <category>REST API</category>
+      <category>Backend</category>
+    </item>
+    <item>
+      <title>Building RAG Applications: From Naive Search to Production Pipeline</title>
+      <link>https://jagyeman.dev/blog/building-rag-applications</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/building-rag-applications</guid>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 GMT</pubDate>
+      <description>A practical guide to building Retrieval-Augmented Generation systems that actually work. Covers embedding strategies, chunking, vector databases, re-ranking, and the pitfalls that tutorials skip.</description>
+      <category>AI</category>
+      <category>RAG</category>
+      <category>LLMs</category>
+      <category>Python</category>
+      <category>Vector Databases</category>
+    </item>
+    <item>
+      <title>Fine-Tuning LLMs: When You Need It and How to Do It Right</title>
+      <link>https://jagyeman.dev/blog/fine-tuning-llms-practical-guide</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/fine-tuning-llms-practical-guide</guid>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate>
+      <description>A practical guide to fine-tuning large language models. When fine-tuning beats prompting, how to prepare datasets, LoRA vs full fine-tuning, and evaluation strategies that prevent shipping a worse model.</description>
+      <category>AI</category>
+      <category>LLMs</category>
+      <category>Machine Learning</category>
+      <category>Python</category>
+    </item>
+    <item>
+      <title>Clean Code That Actually Matters: Principles I Follow After 5 Years of Production Code</title>
+      <link>https://jagyeman.dev/blog/clean-code-principles</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/clean-code-principles</guid>
+      <pubDate>Fri, 30 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Not another &apos;use meaningful variable names&apos; article. These are the clean code principles that actually prevent production incidents, reduce PR review time, and make codebases a joy to work in.</description>
+      <category>Software Engineering</category>
+      <category>Clean Code</category>
+      <category>Best Practices</category>
+    </item>
+    <item>
+      <title>From Monolith to Microservices: Lessons Learned</title>
+      <link>https://jagyeman.dev/blog/from-monolith-to-microservices</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/from-monolith-to-microservices</guid>
+      <pubDate>Sun, 25 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Real-world lessons from migrating a Django monolith to a microservices architecture using Docker, Kubernetes, and event-driven communication.</description>
+      <category>Microservices</category>
+      <category>Docker</category>
+      <category>Kubernetes</category>
+      <category>Architecture</category>
+    </item>
+    <item>
+      <title>System Design Fundamentals Every Developer Should Know</title>
+      <link>https://jagyeman.dev/blog/system-design-for-developers</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/system-design-for-developers</guid>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 GMT</pubDate>
+      <description>The system design concepts that matter most in real-world engineering — load balancing, caching, database scaling, message queues, and how to think about trade-offs. No whiteboard interview fluff.</description>
+      <category>System Design</category>
+      <category>Backend</category>
+      <category>Architecture</category>
+      <category>DevOps</category>
+    </item>
+    <item>
+      <title>TypeScript Patterns That Make Your Code Bulletproof</title>
+      <link>https://jagyeman.dev/blog/typescript-patterns-you-should-know</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/typescript-patterns-you-should-know</guid>
+      <pubDate>Sun, 18 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Advanced TypeScript patterns for real-world applications — discriminated unions, branded types, type-safe event systems, and builder patterns that catch bugs at compile time instead of production.</description>
+      <category>TypeScript</category>
+      <category>Frontend</category>
+      <category>Software Engineering</category>
+      <category>React</category>
+    </item>
+    <item>
+      <title>Deploying ML Models to Production: What They Don&apos;t Teach in Tutorials</title>
+      <link>https://jagyeman.dev/blog/deploying-ml-models-production</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/deploying-ml-models-production</guid>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
+      <description>The gap between a Jupyter notebook and a production ML system is massive. Covering model serving, monitoring, feature stores, A/B testing, and the operational patterns that keep ML systems reliable.</description>
+      <category>Machine Learning</category>
+      <category>MLOps</category>
+      <category>Python</category>
+      <category>DevOps</category>
+    </item>
+    <item>
+      <title>The Future of Full-Stack Development in the Age of AI</title>
+      <link>https://jagyeman.dev/blog/future-of-fullstack-ai</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/future-of-fullstack-ai</guid>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+      <description>How AI is reshaping what it means to be a full-stack developer. The skills that are becoming more valuable, the ones becoming commoditized, and how to position yourself for the next decade.</description>
+      <category>AI</category>
+      <category>Software Engineering</category>
+      <category>Career</category>
+      <category>Full Stack</category>
+    </item>
+    <item>
+      <title>CI/CD Pipelines That Actually Work: A Practical Guide</title>
+      <link>https://jagyeman.dev/blog/cicd-pipelines-that-work</link>
+      <guid isPermaLink="true">https://jagyeman.dev/blog/cicd-pipelines-that-work</guid>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+      <description>How to build CI/CD pipelines that are fast, reliable, and don&apos;t make your team dread merging code. Covering GitHub Actions, testing strategies, deployment patterns, and the common mistakes that slow teams down.</description>
+      <category>DevOps</category>
+      <category>CI/CD</category>
+      <category>GitHub Actions</category>
+      <category>Software Engineering</category>
+    </item>
+  </channel>
+</rss>
