@@ -17,7 +17,8 @@
       "WebFetch(domain:echoweb-mu.vercel.app)",
       "WebFetch(domain:threetwo.vercel.app)",
       "WebFetch(domain:afcfta.blog)",
-      "Bash(npx vite build:*)"
+      "Bash(npx vite build:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
