@@ -155,4 +155,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
+  {
+    id: 14,
+    title: "Snoop CLI",
+    description: "A CLI price tracker that scrapes product prices from Amazon, eBay, Walmart, and more, stores history in SQLite, and sends Telegram alerts on price drops and all-time lows.",
+    image: null as string | null,
+    liveUrl: null as string | null,
+    githubUrl: "https://github.com/TRINITY-21/snoop",
+    techStack: ["Python", "BeautifulSoup", "SQLite", "Rich", "Telegram API"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "1 hour",
+  },
 ]
