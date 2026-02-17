@@ -170,9 +170,9 @@ export const vibeProjects = [
   {
     id: 15,
     title: "Briefkit API",
-    description: "A REST API aggregating weather, crypto, and news data with API key auth, rate limiting, TTL caching, and auto-generated Swagger docs — deployable to Railway.",
-    image: null as string | null,
-    liveUrl: null as string | null,
+    description: "A REST API aggregating weather, crypto, and news data with API key auth, rate limiting, TTL caching, and auto-generated Swagger docs — deployed on Railway.",
+    image: "/projects/briefkit.webp",
+    liveUrl: "https://web-production-59874.up.railway.app",
     githubUrl: "https://github.com/TRINITY-21/briefkit",
     techStack: ["Python", "FastAPI", "SQLAlchemy", "httpx", "Pydantic"],
     aiTools: ["Claude", "Cursor"],
