@@ -131,4 +131,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
+  {
+    id: 12,
+    title: "Pulse CLI",
+    description: "A live terminal dashboard that displays weather, crypto prices, Hacker News, and GitHub activity in a 4-panel TUI with auto-refreshing data, keyboard navigation, and toggleable panels.",
+    image: null as string | null,
+    liveUrl: null as string | null,
+    githubUrl: "https://github.com/TRINITY-21/pulse",
+    techStack: ["Go", "BubbleTea", "Lip Gloss", "CoinGecko API"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "1 hour",
+  },
 ]
