@@ -76,6 +76,30 @@ const VibeCoded: React.FC = () => {
       status: "live",
       vibeTime: "1 hour",
     },
+    {
+      id: 7,
+      title: "Auxcord CLI",
+      description: "Spotify from your terminal — search tracks, explore artist profiles with discographies, browse albums and tracklists, and discover similar artists through genre-based matching, all styled with a Spotify-themed terminal UI.",
+      image: null as string | null,
+      liveUrl: null as string | null,
+      githubUrl: "https://github.com/TRINITY-21/auxcord",
+      techStack: ["Go", "Cobra", "Lip Gloss", "Spotify API"],
+      aiTools: ["Claude", "Cursor"],
+      status: "live",
+      vibeTime: "1 hour",
+    },
+    {
+      id: 8,
+      title: "Loopie CLI",
+      description: "A terminal-based GIF search tool powered by the Giphy API. Search GIFs by keyword, browse trending content, and fetch random GIFs — with copy-to-clipboard support and styled terminal output.",
+      image: null as string | null,
+      liveUrl: null as string | null,
+      githubUrl: "https://github.com/TRINITY-21/loopie",
+      techStack: ["TypeScript", "Commander.js", "Chalk", "Giphy API"],
+      aiTools: ["Claude", "Cursor"],
+      status: "live",
+      vibeTime: "1 hour",
+    },
   ]
 
   const getStatusConfig = (status: string) => {
@@ -200,7 +224,7 @@ const VibeCoded: React.FC = () => {
                             <div className="absolute inset-0 bg-grid opacity-40" />
                             <Terminal className="w-8 h-8 text-accent/30 relative z-10" />
                             <div className="relative z-10 font-mono text-[10px] text-accent/40 bg-accent/[0.04] border border-accent/10 rounded px-3 py-1.5">
-                              $ popkorn mood chill
+                              $ {project.title.toLowerCase().replace(' cli', '')} --help
                             </div>
                           </div>
                         )}
