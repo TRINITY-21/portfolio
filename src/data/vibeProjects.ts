@@ -191,4 +191,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "2 hours",
   },
+  {
+    id: 17,
+    title: "Sweep CLI",
+    description: "A zero-dependency CLI that scans dev folders for regenerable build artifacts like node_modules and .venv, shows disk space recoverable per project, and provides an interactive TUI for cleanup.",
+    image: null as string | null,
+    liveUrl: "https://pypi.org/project/sweep-cli",
+    githubUrl: "https://github.com/TRINITY-21/sweep-cli",
+    techStack: ["Python", "curses", "argparse", "PyPI"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "1 hour",
+  },
 ]
