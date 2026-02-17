@@ -21,7 +21,8 @@
       "Bash(npm install:*)",
       "Bash(npm uninstall:*)",
       "Bash(node:*)",
-      "WebFetch(domain:api.github.com)"
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }

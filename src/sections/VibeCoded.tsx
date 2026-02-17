@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Bot, ExternalLink, Github, Sparkles, Wand2 } from 'lucide-react'
+import { Bot, ExternalLink, Github, Sparkles, Terminal, Wand2 } from 'lucide-react'
 import React from 'react'
 
 const VibeCoded: React.FC = () => {
@@ -60,6 +60,18 @@ const VibeCoded: React.FC = () => {
       liveUrl: "https://josephdev-sigma.vercel.app/",
       githubUrl: "https://github.com/TRINITY-21/portfolio/tree/main",
       techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
+      aiTools: ["Claude", "Cursor"],
+      status: "live",
+      vibeTime: "1 hour",
+    },
+    {
+      id: 6,
+      title: "Popkorn CLI",
+      description: "A terminal-based entertainment CLI for discovering movies, TV shows, and people. Features mood-based recommendations, live TV schedules, trending content, and streaming availability — all from the command line.",
+      image: null as string | null,
+      liveUrl: null as string | null,
+      githubUrl: "https://github.com/TRINITY-21/popkorn",
+      techStack: ["Python", "Click", "Rich", "TMDB API", "TVMaze API"],
       aiTools: ["Claude", "Cursor"],
       status: "live",
       vibeTime: "1 hour",
@@ -153,7 +165,7 @@ const VibeCoded: React.FC = () => {
                           <div className="w-1 h-1 rounded-full bg-emerald-400/70" />
                         </div>
                         <span className="text-silver/40 text-[10px] font-mono truncate max-w-[120px]">
-                          {project.liveUrl?.replace('https://', '').replace(/\/$/, '')}
+                          {project.liveUrl?.replace('https://', '').replace(/\/$/, '') ?? project.githubUrl?.replace('https://github.com/', '')}
                         </span>
                       </div>
                     </div>
@@ -172,14 +184,26 @@ const VibeCoded: React.FC = () => {
                     <div className="relative rounded-lg overflow-hidden border border-line/[0.06]
                                     group-hover:border-line/[0.1] transition-all duration-500">
                       <div className="relative h-40 sm:h-44 overflow-hidden">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          loading="lazy"
-                          onLoad={(e) => e.currentTarget.classList.add('opacity-100')}
-                          className="w-full h-full object-cover object-top transition-all duration-700 opacity-0 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/40" />
+                        {project.image ? (
+                          <>
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              loading="lazy"
+                              onLoad={(e) => e.currentTarget.classList.add('opacity-100')}
+                              className="w-full h-full object-cover object-top transition-all duration-700 opacity-0 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/40" />
+                          </>
+                        ) : (
+                          <div className="absolute inset-0 bg-obsidian flex flex-col items-center justify-center gap-3">
+                            <div className="absolute inset-0 bg-grid opacity-40" />
+                            <Terminal className="w-8 h-8 text-accent/30 relative z-10" />
+                            <div className="relative z-10 font-mono text-[10px] text-accent/40 bg-accent/[0.04] border border-accent/10 rounded px-3 py-1.5">
+                              $ popkorn mood chill
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
