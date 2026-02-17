@@ -179,4 +179,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
+  {
+    id: 16,
+    title: "Zap",
+    description: "A PyPI package that makes Python subprocess actually nice — clean one-liner API, pipe chaining with the | operator, live output streaming, retries, async support, and zero dependencies.",
+    image: null as string | null,
+    liveUrl: "https://pypi.org/project/zap-sh",
+    githubUrl: "https://github.com/TRINITY-21/zap",
+    techStack: ["Python", "subprocess", "asyncio", "PyPI"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "2 hours",
+  },
 ]
