@@ -100,6 +100,18 @@ const VibeCoded: React.FC = () => {
       status: "live",
       vibeTime: "1 hour",
     },
+    {
+      id: 9,
+      title: "TLDR CLI",
+      description: "An AI-powered URL and article summarizer for the terminal. Fetch any webpage, extract its content, and get concise summaries or ask questions about it — powered by Groq's Llama models.",
+      image: null as string | null,
+      liveUrl: null as string | null,
+      githubUrl: "https://github.com/TRINITY-21/tldr",
+      techStack: ["Python", "Click", "Rich", "Groq AI", "Trafilatura"],
+      aiTools: ["Claude", "Cursor"],
+      status: "live",
+      vibeTime: "1 hour",
+    },
   ]
 
   const getStatusConfig = (status: string) => {
