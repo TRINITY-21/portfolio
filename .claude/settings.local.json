@@ -22,7 +22,8 @@
       "Bash(npm uninstall:*)",
       "Bash(node:*)",
       "WebFetch(domain:api.github.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:travel-planner-pi-eight.vercel.app)"
     ]
   }
 }
