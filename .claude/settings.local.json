@@ -23,7 +23,12 @@
       "Bash(node:*)",
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:travel-planner-pi-eight.vercel.app)"
+      "WebFetch(domain:travel-planner-pi-eight.vercel.app)",
+      "Bash(npx --yes playwright:*)",
+      "Bash(npm ls:*)",
+      "Bash(npx playwright screenshot:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(cwebp:*)"
     ]
   }
 }
