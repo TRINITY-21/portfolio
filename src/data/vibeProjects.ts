@@ -215,4 +215,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
+  {
+    id: 19,
+    title: "Huntd CLI",
+    description: "A local git analytics dashboard that scans all repos on your machine and displays coding streaks, contribution heatmaps, language breakdowns, and project health scores — no cloud, no API keys.",
+    image: null as string | null,
+    liveUrl: "https://pypi.org/project/huntd",
+    githubUrl: "https://github.com/TRINITY-21/huntd",
+    techStack: ["Python", "Textual", "Rich", "PyPI"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "2 hours",
+  },
 ]
