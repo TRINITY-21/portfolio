@@ -143,4 +143,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
+  {
+    id: 13,
+    title: "PingBot",
+    description: "A Telegram bot delivering daily briefings with weather, crypto prices, and news headlines, plus an interactive trivia game with score tracking and leaderboards.",
+    image: null as string | null,
+    liveUrl: "https://t.me/joe_pingbot",
+    githubUrl: "https://github.com/TRINITY-21/pingbot",
+    techStack: ["Python", "Telegram Bot API", "aiohttp", "CoinGecko API"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "1 hour",
+  },
 ]
