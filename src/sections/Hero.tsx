@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Download, Mail } from 'lucide-react'
 import React from 'react'
+import { projects } from '../data/projects'
+import { vibeProjects } from '../data/vibeProjects'
 
 const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -120,8 +122,8 @@ const Hero: React.FC = () => {
                             bg-line/[0.03] border border-line/[0.06] backdrop-blur-sm">
               {[
                 { number: '5+', label: 'Years' },
-                { number: '13+', label: 'Projects' },
-                { number: '5+', label: 'Vibe Coded' },
+                { number: `${projects.length + vibeProjects.length}+`, label: 'Projects' },
+                { number: `${vibeProjects.length}+`, label: 'Vibe Coded' },
               ].map((stat, index) => (
                 <div key={index} className="text-center px-2 sm:px-8">
                   <div className="text-xl sm:text-3xl font-bold text-pearl tracking-tight">{stat.number}</div>
