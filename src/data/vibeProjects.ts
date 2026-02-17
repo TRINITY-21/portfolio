@@ -203,4 +203,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
+  {
+    id: 18,
+    title: "Paystack MCP Server",
+    description: "An MCP server bridging AI assistants like Claude to Paystack's payment API — initialize transactions, verify payments, manage customers, and check balances through natural language.",
+    image: null as string | null,
+    liveUrl: "https://pypi.org/project/mcp-server-paystack",
+    githubUrl: "https://github.com/TRINITY-21/mcp-server-paystack",
+    techStack: ["Python", "MCP", "Paystack API", "PyPI"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "1 hour",
+  },
 ]
