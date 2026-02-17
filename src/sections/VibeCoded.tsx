@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Bot, ExternalLink, Github, Sparkles, Terminal, Wand2 } from 'lucide-react'
+import { Bot, ExternalLink, Github, Globe, Sparkles, Terminal, Wand2 } from 'lucide-react'
 import React from 'react'
 import { vibeProjects } from '../data/vibeProjects'
 
@@ -125,10 +125,21 @@ const VibeCoded: React.FC = () => {
                         ) : (
                           <div className="absolute inset-0 bg-obsidian flex flex-col items-center justify-center gap-3">
                             <div className="absolute inset-0 bg-grid opacity-40" />
-                            <Terminal className="w-8 h-8 text-accent/30 relative z-10" />
-                            <div className="relative z-10 font-mono text-[10px] text-accent/40 bg-accent/[0.04] border border-accent/10 rounded px-3 py-1.5">
-                              $ {project.title.toLowerCase().replace(' cli', '')} --help
-                            </div>
+                            {project.liveUrl ? (
+                              <>
+                                <Globe className="w-8 h-8 text-accent/30 relative z-10" />
+                                <div className="relative z-10 font-mono text-[10px] text-accent/40 bg-accent/[0.04] border border-accent/10 rounded px-3 py-1.5">
+                                  {project.liveUrl.replace('https://', '')}
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <Terminal className="w-8 h-8 text-accent/30 relative z-10" />
+                                <div className="relative z-10 font-mono text-[10px] text-accent/40 bg-accent/[0.04] border border-accent/10 rounded px-3 py-1.5">
+                                  $ {project.title.toLowerCase().replace(' cli', '')} --help
+                                </div>
+                              </>
+                            )}
                           </div>
                         )}
                       </div>
