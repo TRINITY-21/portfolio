@@ -227,4 +227,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "2 hours",
   },
+  {
+    id: 20,
+    title: "Huntd VS Code",
+    description: "A VS Code extension that visualizes your local git history in the sidebar — coding streaks, contribution heatmaps, language breakdowns, achievements, and repo health scores, all auto-refreshing on git activity.",
+    image: null as string | null,
+    liveUrl: null as string | null,
+    githubUrl: "https://github.com/TRINITY-21/huntd-vscode",
+    techStack: ["TypeScript", "VS Code API", "Huntd CLI"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "1 hour",
+  },
 ]
