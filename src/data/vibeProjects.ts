@@ -215,7 +215,6 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
-    [videodrop.app](https://videodrop.app)
   {
     id: 19,
     title: "VideoDrop",
