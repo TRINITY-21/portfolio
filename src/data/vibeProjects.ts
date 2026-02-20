@@ -191,7 +191,7 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "2 hours",
   },
-  {
+    {
     id: 17,
     title: "Sweep CLI",
     description: "A zero-dependency CLI that scans dev folders for regenerable build artifacts like node_modules and .venv, shows disk space recoverable per project, and provides an interactive TUI for cleanup.",
@@ -203,20 +203,8 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
-    {
-    id: 18,
-    title: "Sweep CLI",
-    description: "A zero-dependency CLI that scans dev folders for regenerable build artifacts like node_modules and .venv, shows disk space recoverable per project, and provides an interactive TUI for cleanup.",
-    image: null as string | null,
-    liveUrl: "https://pypi.org/project/sweep-cli",
-    githubUrl: "https://github.com/TRINITY-21/sweep-cli",
-    techStack: ["Python", "curses", "argparse", "PyPI"],
-    aiTools: ["Claude", "Cursor"],
-    status: "live",
-    vibeTime: "1 hour",
-  },
   {
-    id: 19,
+    id: 18,
     title: "VideoDrop",
     description: "34 free browser-based video tools — compress, convert, trim, merge, GIF, effects, and more. No uploads, no servers, 100% private.",
     image: null as string | null,
@@ -228,7 +216,7 @@ export const vibeProjects = [
     vibeTime: "2 hours",
   },
   {
-    id: 20,
+    id: 19,
     title: "Huntd CLI",
     description: "A local git analytics dashboard that scans all repos on your machine and displays coding streaks, contribution heatmaps, language breakdowns, and project health scores — no cloud, no API keys.",
     image: null as string | null,
@@ -240,7 +228,7 @@ export const vibeProjects = [
     vibeTime: "2 hours",
   },
   {
-    id: 21,
+    id: 20,
     title: "Huntd VS Code",
     description: "A VS Code extension that visualizes your local git history in the sidebar — coding streaks, contribution heatmaps, language breakdowns, achievements, and repo health scores, all auto-refreshing on git activity.",
     image: null as string | null,
