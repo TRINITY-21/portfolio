@@ -239,4 +239,16 @@ export const vibeProjects = [
     status: "live",
     vibeTime: "1 hour",
   },
+    {
+    id: 21,
+    title: "dotruler",
+    description: "One config. Every AI coding tool. Always in sync. Generate CLAUDE.md, .cursorrules, copilot-instructions, and more from a single ",
+    image: null as string | null,
+    liveUrl: null as string | null,
+    githubUrl: "https://github.com/TRINITY-21/dotruler",
+    techStack: ["Python", "Textual", "Rich", "PyPI"],
+    aiTools: ["Claude", "Cursor"],
+    status: "live",
+    vibeTime: "1 hour",
+  },
 ]
