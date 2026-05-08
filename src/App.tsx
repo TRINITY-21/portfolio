@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage'
 const BlogPage = lazy(() => import('./pages/BlogPage'))
 const BlogPostPage = lazy(() => import('./pages/BlogPostPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+const ResumePage = lazy(() => import('./pages/ResumePage'))
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/resume" element={<ResumePage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

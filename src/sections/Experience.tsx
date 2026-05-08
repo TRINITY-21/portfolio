@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Download, GitCommit } from 'lucide-react'
+import { GitCommit } from 'lucide-react'
 import React from 'react'
 
 const Experience: React.FC = () => {
@@ -156,24 +156,6 @@ const Experience: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Resume Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, delay: 0.3 }}
-          className="text-center mt-14"
-        >
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="btn-primary flex items-center gap-2.5 mx-auto px-8"
-            onClick={() => window.open('https://drive.google.com/file/d/1oMVo0ut4BzpxZrmPdL2ytrJMAyLx13a-/view?usp=sharing', '_blank')}
-          >
-            <Download className="w-4 h-4" />
-            Download Full Resume
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   )

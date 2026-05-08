@@ -99,15 +99,16 @@ const Hero: React.FC = () => {
               Get In Touch
             </motion.button>
 
-            <motion.button
+            <motion.a
+              href="/resumes/resume_aiml.pdf"
+              download="Joseph-Agyeman-Resume.pdf"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="btn-outline flex items-center justify-center gap-2.5 px-8 py-3.5 w-full sm:w-auto"
-              onClick={() => window.open('https://drive.google.com/file/d/1oMVo0ut4BzpxZrmPdL2ytrJMAyLx13a-/view?usp=sharing', '_blank')}
             >
               <Download className="w-4 h-4" />
               Download CV
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Stats */}
