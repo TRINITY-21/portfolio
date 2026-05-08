@@ -32,8 +32,8 @@ const Skills: React.FC = () => {
       skills: ["Microservices", "Distributed Systems", "Kafka", "RabbitMQ", "Event-Driven"],
     },
     {
-      label: "AI / ML",
-      skills: ["TensorFlow", "PyTorch", "NLP", "LLMs", "Deep Learning", "Computer Vision"],
+      label: "AI / LLM",
+      skills: ["Claude", "OpenAI", "Gemini", "Groq", "MCP", "AI Agents", "Vercel AI SDK"],
     },
     {
       label: "Practices",

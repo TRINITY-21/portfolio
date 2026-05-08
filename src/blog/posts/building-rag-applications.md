@@ -9,7 +9,7 @@ published: true
 
 Every company with documents wants a "chat with your data" product. Most of them build a naive RAG pipeline, throw it into production, and wonder why users hate it. The gap between a RAG demo and a RAG product is enormous — and it's mostly about the retrieval, not the generation.
 
-Here's what I've learned building RAG systems that people actually use.
+Here's the playbook I've put together from studying the patterns that separate production RAG systems from the ones that get quietly killed.
 
 ## The Naive Pipeline (And Why It Fails)
 

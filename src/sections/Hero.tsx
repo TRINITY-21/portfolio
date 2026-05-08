@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
           >
             <p className="font-mono text-accent/70 text-xs sm:text-sm tracking-widest uppercase">
-              Full Stack Developer & AI/ML Engineer
+              Full Stack Developer & AI Application Engineer
             </p>
           </motion.div>
 
@@ -122,8 +122,8 @@ const Hero: React.FC = () => {
                             bg-line/[0.03] border border-line/[0.06] backdrop-blur-sm">
               {[
                 { number: '5+', label: 'Years' },
-                { number: `${projects.length + vibeProjects.length}+`, label: 'Projects' },
-                { number: `${vibeProjects.length}+`, label: 'Vibe Coded' },
+                { number: `${projects.length}+`, label: 'Client Projects' },
+                { number: `${vibeProjects.length}+`, label: 'Side Projects' },
               ].map((stat, index) => (
                 <div key={index} className="text-center px-2 sm:px-8">
                   <div className="text-xl sm:text-3xl font-bold text-pearl tracking-tight">{stat.number}</div>

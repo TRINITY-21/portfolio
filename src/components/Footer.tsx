@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                   { label: 'About', href: '#about' },
                   { label: 'Skills', href: '#skills' },
                   { label: 'Projects', href: '#projects' },
-                  { label: 'Vibe Coded', href: '#vibe-coded' },
+                  { label: 'Side Projects', href: '#side-projects' },
                   { label: 'Experience', href: '#experience' },
                   { label: 'Contact', href: '#contact' },
                   { label: 'Blog', href: '/blog' },

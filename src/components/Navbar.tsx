@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
     { name: 'About', href: '#about', type: 'hash' },
     { name: 'Skills', href: '#skills', type: 'hash' },
     { name: 'Projects', href: '#projects', type: 'hash' },
-    { name: 'Vibe Coded', href: '#vibe-coded', type: 'hash' },
+    { name: 'Side Projects', href: '#side-projects', type: 'hash' },
     { name: 'Experience', href: '#experience', type: 'hash' },
     { name: 'Contact', href: '#contact', type: 'hash' },
     { name: 'Blog', href: '/blog', type: 'route' },

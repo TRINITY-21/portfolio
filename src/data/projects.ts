@@ -32,10 +32,10 @@ export const projects = [
   {
     id: 3,
     title: "Artist Desk",
-    description: "A project management platform built for musicians and artists. Organize tasks, projects, music, file sharing, and collaboration — all in one system designed for the creative workflow.",
+    description: "A project management platform built for musicians and artists. Organize tasks, projects, music, file sharing, and collaboration — with an AI-powered workflow feature that streamlines the creative process.",
     category: "fullstack",
     image: "/projects/artistdesk.webp",
-    technologies: ["Next.js", "React", "Firebase", "Firestore", "TypeScript"],
+    technologies: ["Next.js", "React", "Firebase", "Firestore", "TypeScript", "Claude / OpenAI"],
     liveUrl: "https://artistdesk.com",
     githubUrl: null,
   },

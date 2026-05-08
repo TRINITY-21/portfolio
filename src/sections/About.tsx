@@ -161,7 +161,7 @@ const About: React.FC = () => {
             {/* Bio */}
             <div className="space-y-5">
               <p className="text-silver text-base leading-relaxed sm:leading-[1.8]">
-                I'm a <span className="text-pearl font-medium">Full Stack Developer and AI/ML Engineer</span> with over
+                I'm a <span className="text-pearl font-medium">Full Stack Developer and AI Application Engineer</span> with over
                 5 years of experience shipping production software across B2B platforms, fintech, and
                 cybersecurity. My core stack is <span className="text-pearl">Django</span>, <span className="text-pearl">React/Next.js</span>,
                 and TypeScript, backed by PostgreSQL, Redis, and Elasticsearch — deployed
@@ -171,11 +171,12 @@ const About: React.FC = () => {
               </p>
 
               <p className="text-silver text-base leading-relaxed sm:leading-[1.8]">
-                What sets me apart is my ability to pair deep engineering fundamentals with
-                cutting-edge <span className="text-pearl">AI/ML</span> — from training models with TensorFlow
-                and PyTorch to leveraging LLMs for automation. I'm also an early adopter
-                of <span className="text-pearl font-medium">AI-assisted development</span>, using tools like Claude and
-                Cursor to ship full applications in days. Based in Turkey, open to remote roles worldwide,
+                What sets me apart is pairing engineering fundamentals with
+                practical <span className="text-pearl">LLM application work</span> — shipping
+                customer-facing AI features in production, building agents with tool use,
+                and open-sourcing an <span className="text-pearl">MCP server</span> for AI tool integration. I'm also an early adopter
+                of <span className="text-pearl font-medium">AI-assisted development</span>, using Claude and
+                Cursor to ship 20+ side projects. Based in Turkey, open to remote roles worldwide,
                 and I thrive in fast-moving teams where I can own problems end-to-end.
               </p>
             </div>
